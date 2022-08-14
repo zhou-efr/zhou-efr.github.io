@@ -1,0 +1,74 @@
+baseURL = 'http://127.0.0.1:1313/'
+languageCode = 'en-us'
+title = 'Grosser Panda.JPG'
+
+[languages]
+  [languages.fr]
+    languageName = 'Francais'
+    weight = 1
+    [languages.fr.menu]
+    [[languages.fr.menu.main]]
+      identifier = "Accueil"
+      name = 'Home'
+      page = 'Home'
+      url = '/'
+      weight = 1
+    [[languages.fr.menu.main]]
+      identifier = "Resume"
+      name = 'CV'
+      page = 'Resume'
+      url = '/resume'
+      weight = 2
+    [[languages.fr.menu.main]]
+      identifier = 'About'
+      name = 'À propos'
+      page = 'About'
+      url = '/about/'
+      weight = 3
+
+  [languages.en]
+    languageName = 'English'
+    weight = 2
+    [languages.en.menu]
+    [[languages.en.menu.main]]
+      identifier = "Home"
+      name = 'Home'
+      page = 'Home'
+      url = '/'
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "Resume"
+      name = 'Resume'
+      page = 'Resume'
+      url = '/resume'
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = 'About'
+      name = 'About'
+      page = 'About'
+      url = '/about/'
+      weight = 3
+
+
+[module]
+[[module.mounts]]
+  source = 'content'
+  target = 'content'
+[[module.mounts]]
+  source = 'static'
+  target = 'static'
+[[module.mounts]]
+  source = 'layouts'
+  target = 'layouts'
+[[module.mounts]]
+  source = 'data'
+  target = 'data'
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = 'i18n'
+  target = 'i18n'
+[[module.mounts]]
+  source = 'archetypes'
+  target = 'archetypes'
