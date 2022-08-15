@@ -1,6 +1,7 @@
 .navbar-link{
     position: relative;
     margin-bottom: 2px;
+    color: #DED2CC;
 }
 
 .navbar-link:after {

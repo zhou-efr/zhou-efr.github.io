@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+{{ $wwf := resources.Get "images/logo-wwf.svg" }}
+<img src="{{ $wwf.RelPermalink }}" alt="WWF" class="absolute object-cover h-full -top-5 md:left-1/2 z-0">
+
+<div
+        id="AboutUsContainer"
+        class="
+            mt-24
+            p-5
+            w-screen h-screen
+        "
+>
+    <div>
+        <h2 class="text-2xl text-grey font-regular">大熊猫</h2>
+        <h1 class="text-5xl text-darkgreen font-black">Grosser Panda.JPG</h1>
+        <p class="w-2/3 break-words mt-5 md:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque ex quis augue faucibus, non hendrerit purus bibendum. Curabitur venenatis euismod ante, quis iaculis diam sodales at. Aenean tempus elementum odio, id mattis erat blandit blandit.
+        </p>
+        <div class="w-1/2 break-words mt-5 md:text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa,
+            neque. Cum, perferendis, quia. Accusamus amet autem deserunt dolor doloribus enim error est eveniet fugiat,
+            minus quos, reiciendis tempora voluptas.
+        </div>
+        <div class="w-1/2 break-words mt-5 md:text-xl">Adipisci consequuntur delectus, doloribus eaque eius, et eum ex explicabo
+            facere illo impedit iure labore nam necessitatibus perspiciatis provident quasi quis quisquam rem
+            repudiandae sapiente tenetur unde velit. Animi, iste!
+        </div>
+        <div class="w-1/2 break-words mt-5 md:text-xl">Accusantium animi doloribus enim eos error in magni molestiae? Aperiam
+            cumque cupiditate, dignissimos dolores, harum iste itaque laboriosam mollitia officia possimus praesentium
+            ratione recusandae sunt tenetur unde velit voluptas. Fugiat!
+        </div>
+    </div>
+</div>
+{{ end }}
