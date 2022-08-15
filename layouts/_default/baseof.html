@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ .Page.Title }}</title>
-    {{ $navbarcss := resources.Get "css/navbar.css" }}
-    <link href="{{ $navbarcss.RelPermalink }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -15,14 +13,27 @@
                     colors: {
                         darkgreen: '#344342',
                         gold: '#DED2CC',
-
+                        grey: '#747B84'
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="tracking-wider" style="font-family: 'Roboto Light', system-ui, sans-serif">
+<body id="body" class="tracking-wider overflow-x-hidden" style="font-family: 'Roboto Light', system-ui, sans-serif">
+<style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer links {
+        a {
+            @apply text-darkgreen underline;
+        }
+    }
+</style>
+{{ $navbarcss := resources.Get "css/navbar.css" }}
+<link href="{{ $navbarcss.RelPermalink }}" rel="stylesheet">
 {{ partial "navbar/navbar.html" . }}
 {{ block "main" . }}
 <!-- block content -->

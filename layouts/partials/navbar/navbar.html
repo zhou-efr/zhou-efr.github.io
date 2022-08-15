@@ -1,28 +1,37 @@
 <nav
         id="navigationbar"
         class="
-          absolute
-          bottom-0 left-0
+          fixed top-0 left-0
           bg-darkgreen
-          w-screen h-14 p-4
+          w-screen h-24 p-4
           z-10
-          flex flex-row items-center gap-4 justify-between
           text-gold
+          pb-8
         "
 >
-  <div class="flex flex-row items-center gap-4 w-full leading-loose">
-    {{ $logo := resources.Get "images/logo.svg" }}
-    <a href="/static" class="block"> <img class="h-10 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
-    <a class="navbar-link" href="/">Grosser Panda.JPG</a>
-    {{- $currentPage := . -}}
-    {{ range .Site.Menus.main -}}
-    <a class='navbar-link' href="{{ .URL }}">
-      {{ .Name }}
-    </a>
-    {{- end }}
-    <a class="navbar-link" href="https://wwf.fr/" target="_blank">WWF</a>
-  </div>
+  <div
+    id="innernavigationbar"
+    class="
+      relative
+      w-full h-full
+      flex flex-row items-center gap-4 justify-between
+    "
+    >
+    <div class="flex flex-row items-center gap-4 w-full leading-loose">
+      {{ $logo := resources.Get "images/logo.svg" }}
+      <a href="/static" class="block"> <img class="h-10 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
+      <a class="navbar-link" href="/">Grosser Panda.JPG</a>
+      {{- $currentPage := . -}}
+      {{ range .Site.Menus.main -}}
+      <a class='navbar-link' href="{{ .URL }}">
+        {{ .Name }}
+      </a>
+      {{- end }}
+      <a class="navbar-link" href="https://wwf.fr/" target="_blank">WWF</a>
+    </div>
 
-  {{ $scrollicon := resources.Get "images/scroll-icon.svg" }}
-  <img class="h-10 object-contains justify-self-end transform transition-all hover:scale-110" src="{{ $scrollicon.RelPermalink }}" alt="scrolling icon" />
+    {{ $scrollicon := resources.Get "images/scroll-icon.svg" }}
+    <img class="h-10 mr-3 object-contains justify-self-end transform transition-all hover:scale-110" src="{{ $scrollicon.RelPermalink }}" alt="scrolling icon" />
+    <div class="w-4/5 h-px bg-gold absolute left-1/2 -bottom-3 transform -translate-x-1/2" />
+  </div>
 </nav>

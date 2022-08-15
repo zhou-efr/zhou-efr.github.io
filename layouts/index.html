@@ -11,5 +11,17 @@
         "
 />
 <p class="text-white fixed top-4 right-4 text-sm font-thin">Photo by Yu Wang on Unsplash</p>
+<script>
+    let navbar = document.getElementById("navigationbar");
+    navbar.classList.add("absolute");
+    navbar.classList.add("-bottom-7");
+    navbar.classList.remove("fixed");
+    navbar.classList.remove("top-0");
+    let innernavbar = document.getElementById("innernavigationbar");
+    innernavbar.classList.add("pb-2");
 
+    // remove when repair
+    let body = document.getElementById("body");
+    body.classList.add("overflow-y-hidden");
+</script>
 {{ end }}
