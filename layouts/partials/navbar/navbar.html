@@ -31,7 +31,7 @@
     </div>
 
     {{ $scrollicon := resources.Get "images/scroll-icon.svg" }}
-    <img class="h-10 mr-3 object-contains justify-self-end transform transition-all hover:scale-110" src="{{ $scrollicon.RelPermalink }}" alt="scrolling icon" />
+    <img id="scrollButton" class="h-10 mr-3 object-contains justify-self-end cursor-pointer transform transition-all hover:scale-110" src="{{ $scrollicon.RelPermalink }}" alt="scrolling icon" />
     <div class="w-4/5 h-px bg-gold absolute left-1/2 -bottom-3 transform -translate-x-1/2" />
   </div>
 </nav>

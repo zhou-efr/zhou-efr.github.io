@@ -60,7 +60,7 @@ As far I know, I never stay lock on one technology, which makes me kind of all-r
 </div>
 
 #### Cloud and databases
-<div class="flex flex-row w-full p-3 gap-2">
+<div class="flex flex-wrap w-full p-3 gap-2">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" style="height: 42px" alt="mysql"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" style="height: 42px" alt="Mongodb"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" style="height: 42px" alt="Azure"/> <img src="/files/image/10087-icon-service-Storage-Accounts-(Classic).svg" style="height: 42px" alt="azure storage account"/> <img src="/files/image/10029-icon-service-Function-Apps.svg" style="height: 42px" alt="azure functions"/> <img src="/files/image/01007-icon-service-Static-Apps.svg" style="height: 42px" alt="azure static web app"/> <img src="/files/image/10130-icon-service-SQL-Database.svg" style="height: 42px" alt="azure mssql database"/> <img src="/files/image/10122-icon-service-Azure-Database-MySQL-Server.svg" style="height: 42px" alt="azure mysql database"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg" style="height: 42px" alt="google cloud"/> <img src="/files/image/cloud_functions.png" style="height: 42px" alt="google cloud function"/>
 </div>
 
