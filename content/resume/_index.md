@@ -12,7 +12,6 @@ staticurl: ""
 **Search for a technical internship in the field of cybersecurity**  
 **Duration: 5 months from November 2022**  
 <br/>
-(+33) 06 24 01 65 10  
 [killian.zhou@efrei.net](mailto:killian.zhou@efrei.net)  
 [linkedin.com/in/zhou-killian/](https://www.linkedin.com/in/zhou-killian/)  
 [github.com/zhou-efr/](https://github.com/zhou-efr/)  
