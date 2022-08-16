@@ -10,11 +10,11 @@
         tailwind.config = {
             theme: {
                 screens : {
-                    '2xl': { 'raw': '(min-device-width: 1536px)' },
-                    'xl': { 'raw': '(min-device-width: 1280px)' },
-                    'lg': { 'raw': '(min-device-width: 1024px)' },
-                    'md': { 'raw': '(min-device-width: 768px)' },
-                    'sm': { 'raw': '(min-device-width: 640px)' },
+                    '2xl': { 'raw': '(min-width: 1536px)' },
+                    'xl': { 'raw': '(min-width: 1280px)' },
+                    'lg': { 'raw': '(min-width: 1024px)' },
+                    'md': { 'raw': '(min-device-width: 768px) or (min-width: 768px)' },
+                    'sm': { 'raw': '(min-device-width: 640px) or (min-width: 640px)' },
                 },
                 extend: {
                     colors: {
@@ -24,7 +24,10 @@
                     },
                     spacing: {
                         'screen': '100vh',
-                    }
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+
                 }
             }
         }
