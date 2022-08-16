@@ -16,8 +16,8 @@
 
 <div class="w-screen mt-screen relative flex flex-col items-center parallax [scroll-snap-align:start] bg-[url('{{$parallaxcontent.RelPermalink}}')] bg-fixed bg-cover bg-center lg:bg-none">
     <img src="{{ $parallaxcontent.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
-    <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
-        <div class="card w-4/5 rounded-lg p-5 text-darkgreen">
+    <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5 ">
+        <div class="card w-4/5 rounded-lg p-5 lg:p-20 text-darkgreen">
             <h2 class="text-2xl text-grey font-regular">大熊猫</h2>
             <h1 class="text-5xl text-darkgreen font-black">Grosser Panda.JPG</h1>
             <p class="w-full lg:text-lg lg:w-2/3 mt-3">
@@ -29,19 +29,65 @@
                 even meat in the form of birds, rodents, or carrion. In captivity, they may receive honey, eggs, fish,
                 yams, shrub leaves, oranges, or bananas along with specially prepared food.
             </p>
-            <h2 class="text-2xl lg:w-1/3 font-semibold mt-3">Is the panda vegetarian ?</h2>
-            <p class="w-full lg:text-lg lg:w-1/3 mt-3">
-                The giant panda's diet is primarily herbivorous, consisting almost exclusively of bamboo. However, the
-                giant panda still has the digestive system of a carnivore, as well as carnivore-specific genes, and thus
-                derives little energy and little protein from consumption of bamboo. The giant panda is a highly
-                specialised animal with unique adaptations, and has lived in bamboo forests for millions of years.
+            <div class="flex flex-wrap-reverse justify-between items-center w-full h-fit">
+                <div class="flex flex-col lg:w-1/3">
+                    <h2 class="text-2xl font-semibold mt-3">Is the panda vegetarian ?</h2>
+                    <p class="w-full lg:text-lg mt-3">
+                        The giant panda's diet is primarily herbivorous, consisting almost exclusively of bamboo. However, the
+                        giant panda still has the digestive system of a carnivore, as well as carnivore-specific genes, and thus
+                        derives little energy and little protein from consumption of bamboo. The giant panda is a highly
+                        specialised animal with unique adaptations, and has lived in bamboo forests for millions of years.
+                    </p>
+                    <p class="w-full lg:text-lg mt-3">
+                        It can ingest up to 20kg of bamboo per day and spends nearly 14 hours chewing them because of its poor
+                        capacity to assimilate cellulose (deprived of "caecum", like any ursid, it can only digest 17%).Its
+                        ability to digest cellulose is ascribed to the microbes in its gut. Pandas are born with sterile
+                        intestines and require bacteria obtained from their mother's feces to digest vegetation.
+                    </p>
+                </div>
+                <div class="flex w-2/3 h-full justify-center items-center">
+                    <div class="hidden lg:flex card w-128 h-96 flex-row justify-between rounded-lg bg-white overflow-hidden">
+                        {{ $quiling := resources.Get "images/panda-3.png" }}
+                        <img src="{{ $quiling.RelPermalink}}" alt="quiling panda" class="object-cover w-64 h-96">
+                        <div class="p-5">
+                            <h2 class="text-2xl font-semibold">Two pandas ?</h2>
+                            <p class="lg:text-regular">
+                                The Qinling panda (Ailuropoda melanoleuca qinlingensis) is a subspecies of the giant panda.
+                                It differs from the more familiar nominate subspecies by its smaller skull and dark brown
+                                and light brown (rather than black and white) fur, and its smaller overall size. Its eye
+                                spots are under the lower lid, instead of around the eyes. Brown pandas are very rare.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card w-4/5 rounded-lg p-5 lg:p-20 text-darkgreen mt-128">
+            <h2 class="text-2xl text-grey font-regular">大熊猫</h2>
+            <h1 class="text-5xl text-darkgreen font-black">The panda in statistics</h1>
+            <p class="text-lg mt-3">
+                The giant panda has just been downgraded to "endangered" to join the so-called "vulnerable" species on
+                the IUCN's global list of endangered species.
             </p>
-            <p class="w-full lg:text-lg lg:w-1/3 mt-3">
-                It can ingest up to 20kg of bamboo per day and spends nearly 14 hours chewing them because of its poor
-                capacity to assimilate cellulose (deprived of "caecum", like any ursid, it can only digest 17%).Its
-                ability to digest cellulose is ascribed to the microbes in its gut. Pandas are born with sterile
-                intestines and require bacteria obtained from their mother's feces to digest vegetation.
-            </p>
+            <div class="flex items-center justify-center m-14">
+                <div class="flex justify-center lg:w-1/2">
+                    <div class="px-8 py-2 border-darkgreen border-r-2">
+                        <h3 class="text-4xl font-bold text-center">1,864</h3>
+                        <p class="text-2xl text-center">Wild</p>
+                        <p class="text-2xl text-center">pandas</p>
+                    </div>
+                    <div class="px-8 py-2 border-darkgreen border-r-2">
+                        <h3 class="text-4xl font-bold text-center">+4 ft</h3>
+                        <p class="text-2xl text-center">Height of</p>
+                        <p class="text-2xl text-center">adult panda</p>
+                    </div>
+                    <div class="px-8 py-2 ">
+                        <h3 class="text-4xl font-bold text-center">125kg</h3>
+                        <p class="text-2xl text-center">Average weight</p>
+                        <p class="text-2xl text-center">of an adult panda</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
