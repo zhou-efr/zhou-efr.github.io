@@ -14,8 +14,8 @@
 <p class="text-white absolute top-4 right-4 text-sm font-thin">Photo by Yu Wang on Unsplash</p>
 {{ $parallaxcontent := resources.Get "images/panda-2.png" }}
 
-<div class="w-screen mt-screen relative flex flex-col items-center parallax [scroll-snap-align:start] bg-[url('{{$parallaxcontent.RelPermalink}}')] bg-fixed bg-cover md:bg-none">
-    <img src="{{ $parallaxcontent.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden md:block top-0 md:parallax__layer md:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
+<div class="w-screen mt-screen relative flex flex-col items-center parallax [scroll-snap-align:start] bg-[url('{{$parallaxcontent.RelPermalink}}')] bg-fixed bg-cover lg:bg-none">
+    <img src="{{ $parallaxcontent.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block top-0 lg:parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
     <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
         <div class="card w-4/5 rounded-lg p-5 text-darkgreen">
             <h2 class="text-2xl text-grey font-regular">大熊猫</h2>

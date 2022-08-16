@@ -19,7 +19,7 @@
     >
     <div class="flex flex-row items-center gap-4 w-full leading-loose">
       {{ $logo := resources.Get "images/logo.svg" }}
-      <a href="/static" class="block"> <img class="h-10 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
+      <a href="/" class="block"> <img class="h-10 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
       <a class="navbar-link" href="/">Grosser Panda.JPG</a>
       {{- $currentPage := . -}}
       {{ range .Site.Menus.main -}}
