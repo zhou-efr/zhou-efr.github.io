@@ -1,5 +1,7 @@
-baseURL = 'https://zhou-efr.github.io/'
+baseURL = 'https://zhou-efr.github.io'
 languageCode = 'en-us'
+description = "Le panda géant (Ailuropoda melanoleuca) est une espèce de mammifères, habituellement classée dans la famille des ursidés (Ursidae), endémique de la Chine centrale."
+images = ['/files/image/panda-default.jpg']
 title = 'Grosser Panda.JPG'
 
 [markup.goldmark.renderer]
@@ -19,11 +21,17 @@ title = 'Grosser Panda.JPG'
       url = '/resume'
       weight = 2
     [[menu.main]]
+      identifier = "Cyber-log"
+      name = 'Cyber-log'
+      page = 'Cyber-log'
+      url = '/cyber-log'
+      weight = 3
+    [[menu.main]]
       identifier = 'About'
       name = 'About'
       page = 'About'
       url = '/about'
-      weight = 3
+      weight = 4
 
 
 [module]
