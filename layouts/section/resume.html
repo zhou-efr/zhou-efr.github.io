@@ -20,7 +20,7 @@
 </style>
 {{ $parallax := resources.Get "images/resume-bg-16-9-min.jpg" }}
 
-<div class="w-screen relative flex flex-col items-center parallax bg-[url('{{$parallax.RelPermalink}}')] bg-fixed bg-cover lg:bg-none">
+<div class="w-screen relative flex flex-col items-center parallax pb-5 bg-[url('{{$parallax.RelPermalink}}')] bg-fixed bg-cover lg:bg-none">
   <img src="{{ $parallax.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
   <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
     <div class="card w-4/5 rounded-lg p-5 mb-5">
