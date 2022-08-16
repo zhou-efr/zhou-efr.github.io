@@ -34,6 +34,10 @@
 </style>
 {{ $navbarcss := resources.Get "css/navbar.css" }}
 <link href="{{ $navbarcss.RelPermalink }}" rel="stylesheet">
+{{ $parallaxcss := resources.Get "css/parallax.css" }}
+<link href="{{ $parallaxcss.RelPermalink }}" rel="stylesheet">
+{{ $card := resources.Get "css/card.css" }}
+<link href="{{ $card.RelPermalink }}" rel="stylesheet">
 {{ partial "navbar/navbar.html" . }}
 {{ block "main" . }}
 <!-- block content -->

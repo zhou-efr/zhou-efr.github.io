@@ -42,7 +42,7 @@ at the night drop store as part of a sales internship.
 Within the association service, study, projects of EFREI (or SEPEFREI).  
 *Skills developed: time and work management, teamwork, scheduling, taking responsibility, etc.*  
 ### Sales consultant / 2016 – 2020:  
-for SARL Sefarim during convention in France, Belgium, Germany. 
+for SARL Sefarim during convention in France, Belgium, Germany.  
 *Skills developed: communication, customer relations and advice, organization, cash management, rush handling.*  
 
 ## Competence
@@ -80,10 +80,11 @@ As far I know, I never stay lock on one technology, which makes me kind of all-r
 <img src="/files/image/icons8-windows-10.svg" style="height: 42px" alt="windows"/> <img src="/files/image/mac_os.png" style="height: 42px" alt="MacOs"/> <img src="/files/image/kali.png" style="height: 42px" alt="kali linux"/>  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/debian/debian-original.svg" style="height: 42px" alt="linux - debian"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg" style="height: 42px" alt="arduino"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/raspberrypi/raspberrypi-original.svg" style="height: 42px" alt="raspberry"/> 
 </div>
 
-#### Language
+### Language
 French, mother tongue  
 Advanced English, 905 / 990 toeic  
-Voltaire certification  
+Spanish - Mandarin beginner  
+Voltaire certification
 
 ## Projects
 During my studies, I worked on many projects that would not have been possible without my Tribu des Zhou teammates and my ability to work as a team.
