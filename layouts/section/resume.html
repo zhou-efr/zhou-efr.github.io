@@ -2,19 +2,31 @@
 <style type="text/tailwindcss">
   @layer components {
     h1 {
-      @apply text-4xl font-bold mt-5;
+      @apply text-4xl font-bold mt-5 lg:text-6xl;
     }
 
     h2 {
-      @apply text-3xl font-semibold mt-4;
+      @apply text-3xl font-semibold mt-4 lg:text-5xl;
     }
 
     h3 {
-      @apply text-xl font-semibold mt-3;
+      @apply text-xl font-semibold mt-3 lg:text-2xl;
+    }
+
+    p {
+      @apply lg:text-lg;
     }
   }
 </style>
-<div class="mt-24 p-5">
-  {{ .Content }}
+{{ $parallax := resources.Get "images/resume-bg-16-9.jpg" }}
+
+<div class="w-screen relative flex flex-col items-center parallax">
+  <img src="{{ $parallax.RelPermalink }}" alt="Singapore, Garden by the bay" class="parallax__layer w-screen [transform:translateZ(-15px)_scale(16)_translateX(-10px)] md:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
+  <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
+    <div class="card w-4/5 rounded-lg p-5">
+      {{ .Content }}
+    </div>
+  </div>
 </div>
+
 {{ end }}
