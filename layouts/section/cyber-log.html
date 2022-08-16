@@ -1,0 +1,1206 @@
+{{ define "main" }}
+<style type="text/tailwindcss">
+  @layer components {
+    h1 {
+      @apply text-4xl font-bold mt-5 lg:text-6xl;
+    }
+
+    h2 {
+      @apply text-3xl font-semibold mt-4 lg:text-5xl;
+    }
+
+    h3 {
+      @apply text-xl font-semibold mt-3 lg:text-2xl;
+    }
+
+    p {
+      @apply lg:text-lg;
+    }
+  }
+</style>
+{{ $parallax := resources.Get "images/resume-bg-2-min.jpg" }}
+
+<div class="w-screen relative flex flex-col items-center parallax pb-5 bg-[url('{{$parallax.RelPermalink}}')] bg-fixed bg-cover">
+  <img src="{{ $parallax.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
+  <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
+    <div class="card w-4/5 rounded-lg p-5 mb-5">
+      <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+          -webkit-print-color-adjust: exact;
+        }
+        * {
+          box-sizing: border-box;
+          -webkit-print-color-adjust: exact;
+        }
+
+        a,
+        a.visited {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        .pdf-relative-link-path {
+          font-size: 80%;
+          color: #444;
+        }
+
+        h1,
+        h2,
+        h3 {
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+
+        .page-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 0.75em;
+        }
+
+        h1 {
+          font-size: 1.875rem;
+          margin-top: 1.875rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          margin-top: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+          margin-top: 1.25rem;
+        }
+
+        .source {
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 1.5em;
+          word-break: break-all;
+        }
+
+        .callout {
+          border-radius: 3px;
+          padding: 1rem;
+        }
+
+        figure {
+          margin: 1.25em 0;
+          page-break-inside: avoid;
+        }
+
+        figcaption {
+          opacity: 0.5;
+          font-size: 85%;
+          margin-top: 0.5em;
+        }
+
+        mark {
+          background-color: transparent;
+        }
+
+        .indented {
+          padding-left: 1.5em;
+        }
+
+        hr {
+          background: transparent;
+          display: block;
+          width: 100%;
+          height: 1px;
+          visibility: visible;
+          border: none;
+          border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        img {
+          max-width: 100%;
+        }
+
+        .collection-content {
+          font-size: 0.875rem;
+        }
+
+        .column-list {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .column {
+          padding: 0 1em;
+        }
+
+        .column:first-child {
+          padding-left: 0;
+        }
+
+        .column:last-child {
+          padding-right: 0;
+        }
+
+        .table_of_contents-item {
+          display: block;
+          font-size: 0.875rem;
+          line-height: 1.3;
+          padding: 0.125rem;
+        }
+
+        .table_of_contents-indent-1 {
+          margin-left: 1.5rem;
+        }
+
+        .table_of_contents-indent-2 {
+          margin-left: 3rem;
+        }
+
+        .table_of_contents-indent-3 {
+          margin-left: 4.5rem;
+        }
+
+        .table_of_contents-link {
+          text-decoration: none;
+          opacity: 0.7;
+          border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+        }
+
+        table,
+        th,
+        td {
+          border: 1px solid rgba(55, 53, 47, 0.09);
+          border-collapse: collapse;
+        }
+
+        table {
+          border-left: none;
+          border-right: none;
+        }
+
+        th,
+        td {
+          font-weight: normal;
+          padding: 0.25em 0.5em;
+          line-height: 1.5;
+          min-height: 1.5em;
+          text-align: left;
+        }
+
+        th {
+          color: rgba(55, 53, 47, 0.6);
+        }
+
+        ol,
+        ul {
+          margin: 0;
+          margin-block-start: 0.6em;
+          margin-block-end: 0.6em;
+        }
+
+        li > ol:first-child,
+        li > ul:first-child {
+          margin-block-start: 0.6em;
+        }
+
+        ul > li {
+          list-style: disc;
+        }
+
+        ul.to-do-list {
+          text-indent: -1.7em;
+        }
+
+        ul.to-do-list > li {
+          list-style: none;
+        }
+
+        .to-do-children-checked {
+          text-decoration: line-through;
+          opacity: 0.375;
+        }
+
+        ul.toggle > li {
+          list-style: none;
+        }
+
+        ul {
+          padding-inline-start: 1.7em;
+        }
+
+        ul > li {
+          padding-left: 0.1em;
+        }
+
+        ol {
+          padding-inline-start: 1.6em;
+        }
+
+        ol > li {
+          padding-left: 0.2em;
+        }
+
+        .mono ol {
+          padding-inline-start: 2em;
+        }
+
+        .mono ol > li {
+          text-indent: -0.4em;
+        }
+
+        .toggle {
+          padding-inline-start: 0em;
+          list-style-type: none;
+        }
+
+        /* Indent toggle children */
+        .toggle > li > details {
+          padding-left: 1.7em;
+        }
+
+        .toggle > li > details > summary {
+          margin-left: -1.1em;
+        }
+
+        .selected-value {
+          display: inline-block;
+          padding: 0 0.5em;
+          background: rgba(206, 205, 202, 0.5);
+          border-radius: 3px;
+          margin-right: 0.5em;
+          margin-top: 0.3em;
+          margin-bottom: 0.3em;
+          white-space: nowrap;
+        }
+
+        .collection-title {
+          display: inline-block;
+          margin-right: 1em;
+        }
+
+        .simple-table {
+          margin-top: 1em;
+          font-size: 0.875rem;
+          empty-cells: show;
+        }
+        .simple-table td {
+          height: 29px;
+          min-width: 120px;
+        }
+
+        .simple-table th {
+          height: 29px;
+          min-width: 120px;
+        }
+
+        .simple-table-header-color {
+          background: rgb(247, 246, 243);
+          color: black;
+        }
+        .simple-table-header {
+          font-weight: 500;
+        }
+
+        time {
+          opacity: 0.5;
+        }
+
+        .icon {
+          display: inline-block;
+          max-width: 1.2em;
+          max-height: 1.2em;
+          text-decoration: none;
+          vertical-align: text-bottom;
+          margin-right: 0.5em;
+        }
+
+        img.icon {
+          border-radius: 3px;
+        }
+
+        .user-icon {
+          width: 1.5em;
+          height: 1.5em;
+          border-radius: 100%;
+          margin-right: 0.5rem;
+        }
+
+        .user-icon-inner {
+          font-size: 0.8em;
+        }
+
+        .text-icon {
+          border: 1px solid #000;
+          text-align: center;
+        }
+
+        .page-cover-image {
+          display: block;
+          object-fit: cover;
+          width: 100%;
+          max-height: 30vh;
+        }
+
+        .page-header-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .page-header-icon-with-cover {
+          margin-top: -0.72em;
+          margin-left: 0.07em;
+        }
+
+        .page-header-icon img {
+          border-radius: 3px;
+        }
+
+        .link-to-page {
+          margin: 1em 0;
+          padding: 0;
+          border: none;
+          font-weight: 500;
+        }
+
+        p > .user {
+          opacity: 0.5;
+        }
+
+        td > .user,
+        td > time {
+          white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+          transform: scale(1.5);
+          margin-right: 0.6em;
+          vertical-align: middle;
+        }
+
+        p {
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+        }
+
+        .image {
+          border: none;
+          margin: 1.5em 0;
+          padding: 0;
+          border-radius: 0;
+          text-align: center;
+        }
+
+        .code,
+        code {
+          background: rgba(135, 131, 120, 0.15);
+          border-radius: 3px;
+          padding: 0.2em 0.4em;
+          border-radius: 3px;
+          font-size: 85%;
+          tab-size: 2;
+        }
+
+        code {
+          color: #eb5757;
+        }
+
+        .code {
+          padding: 1.5em 1em;
+        }
+
+        .code-wrap {
+          white-space: pre-wrap;
+          word-break: break-all;
+        }
+
+        .code > code {
+          background: none;
+          padding: 0;
+          font-size: 100%;
+          color: inherit;
+        }
+
+        blockquote {
+          font-size: 1.25em;
+          margin: 1em 0;
+          padding-left: 1em;
+          border-left: 3px solid rgb(55, 53, 47);
+        }
+
+        .bookmark {
+          text-decoration: none;
+          max-height: 8em;
+          padding: 0;
+          display: flex;
+          width: 100%;
+          align-items: stretch;
+        }
+
+        .bookmark-title {
+          font-size: 0.85em;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: 1.75em;
+          white-space: nowrap;
+        }
+
+        .bookmark-text {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .bookmark-info {
+          flex: 4 1 180px;
+          padding: 12px 14px 14px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .bookmark-image {
+          width: 33%;
+          flex: 1 1 180px;
+          display: block;
+          position: relative;
+          object-fit: cover;
+          border-radius: 1px;
+        }
+
+        .bookmark-description {
+          color: rgba(55, 53, 47, 0.6);
+          font-size: 0.75em;
+          overflow: hidden;
+          max-height: 4.5em;
+          word-break: break-word;
+        }
+
+        .bookmark-href {
+          font-size: 0.75em;
+          margin-top: 0.25em;
+        }
+
+        .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+        .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+        .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+        .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+        .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+        .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+        .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+        .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+        .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+        .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+        .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+        .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+        .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+        .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+        .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+        .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+        .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+        .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+        .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+        .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+        .highlight-default {
+          color: rgba(55, 53, 47, 1);
+        }
+        .highlight-gray {
+          color: rgba(120, 119, 116, 1);
+          fill: rgba(120, 119, 116, 1);
+        }
+        .highlight-brown {
+          color: rgba(159, 107, 83, 1);
+          fill: rgba(159, 107, 83, 1);
+        }
+        .highlight-orange {
+          color: rgba(217, 115, 13, 1);
+          fill: rgba(217, 115, 13, 1);
+        }
+        .highlight-yellow {
+          color: rgba(203, 145, 47, 1);
+          fill: rgba(203, 145, 47, 1);
+        }
+        .highlight-teal {
+          color: rgba(68, 131, 97, 1);
+          fill: rgba(68, 131, 97, 1);
+        }
+        .highlight-blue {
+          color: rgba(51, 126, 169, 1);
+          fill: rgba(51, 126, 169, 1);
+        }
+        .highlight-purple {
+          color: rgba(144, 101, 176, 1);
+          fill: rgba(144, 101, 176, 1);
+        }
+        .highlight-pink {
+          color: rgba(193, 76, 138, 1);
+          fill: rgba(193, 76, 138, 1);
+        }
+        .highlight-red {
+          color: rgba(212, 76, 71, 1);
+          fill: rgba(212, 76, 71, 1);
+        }
+        .highlight-gray_background {
+          background: rgba(241, 241, 239, 1);
+        }
+        .highlight-brown_background {
+          background: rgba(244, 238, 238, 1);
+        }
+        .highlight-orange_background {
+          background: rgba(251, 236, 221, 1);
+        }
+        .highlight-yellow_background {
+          background: rgba(251, 243, 219, 1);
+        }
+        .highlight-teal_background {
+          background: rgba(237, 243, 236, 1);
+        }
+        .highlight-blue_background {
+          background: rgba(231, 243, 248, 1);
+        }
+        .highlight-purple_background {
+          background: rgba(244, 240, 247, 0.8);
+        }
+        .highlight-pink_background {
+          background: rgba(249, 238, 243, 0.8);
+        }
+        .highlight-red_background {
+          background: rgba(253, 235, 236, 1);
+        }
+        .block-color-default {
+          color: inherit;
+          fill: inherit;
+        }
+        .block-color-gray {
+          color: rgba(120, 119, 116, 1);
+          fill: rgba(120, 119, 116, 1);
+        }
+        .block-color-brown {
+          color: rgba(159, 107, 83, 1);
+          fill: rgba(159, 107, 83, 1);
+        }
+        .block-color-orange {
+          color: rgba(217, 115, 13, 1);
+          fill: rgba(217, 115, 13, 1);
+        }
+        .block-color-yellow {
+          color: rgba(203, 145, 47, 1);
+          fill: rgba(203, 145, 47, 1);
+        }
+        .block-color-teal {
+          color: rgba(68, 131, 97, 1);
+          fill: rgba(68, 131, 97, 1);
+        }
+        .block-color-blue {
+          color: rgba(51, 126, 169, 1);
+          fill: rgba(51, 126, 169, 1);
+        }
+        .block-color-purple {
+          color: rgba(144, 101, 176, 1);
+          fill: rgba(144, 101, 176, 1);
+        }
+        .block-color-pink {
+          color: rgba(193, 76, 138, 1);
+          fill: rgba(193, 76, 138, 1);
+        }
+        .block-color-red {
+          color: rgba(212, 76, 71, 1);
+          fill: rgba(212, 76, 71, 1);
+        }
+        .block-color-gray_background {
+          background: rgba(241, 241, 239, 1);
+        }
+        .block-color-brown_background {
+          background: rgba(244, 238, 238, 1);
+        }
+        .block-color-orange_background {
+          background: rgba(251, 236, 221, 1);
+        }
+        .block-color-yellow_background {
+          background: rgba(251, 243, 219, 1);
+        }
+        .block-color-teal_background {
+          background: rgba(237, 243, 236, 1);
+        }
+        .block-color-blue_background {
+          background: rgba(231, 243, 248, 1);
+        }
+        .block-color-purple_background {
+          background: rgba(244, 240, 247, 0.8);
+        }
+        .block-color-pink_background {
+          background: rgba(249, 238, 243, 0.8);
+        }
+        .block-color-red_background {
+          background: rgba(253, 235, 236, 1);
+        }
+        .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+        .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+        .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+        .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+        .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+        .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+        .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+        .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+        .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+        .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+        .checkbox {
+          display: inline-flex;
+          vertical-align: text-bottom;
+          width: 16;
+          height: 16;
+          background-size: 16px;
+          margin-left: 2px;
+          margin-right: 5px;
+        }
+
+        .checkbox-on {
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+
+        .checkbox-off {
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+
+      </style>
+      <article id="b5e0009d-00ed-4d7b-842a-009cbcb98c00" class="page sans">
+        <header>
+          <div class="page-header-icon undefined">
+            <img class="icon" src="/files/image/noun-cybersecurity-3797344.png"/>
+          </div>
+          <h1 class="page-title">Cybersécurité</h1>
+        </header>
+        <div class="page-body">
+          <p id="07581f56-4e53-4006-be7e-cedfb85c1199" class="">A little <strong><em>bloc-note</em></strong> following my journey in cybersecurity</p>
+          <figure id="9dc29b40-d7a1-4672-835a-389ad2e21c13">
+            <a href="https://github.com/zhou-efr" class="bookmark source">
+              <div class="bookmark-info">
+                <div class="bookmark-text">
+                  <div class="bookmark-title">zhou-efr - Overview</div>
+                  <div class="bookmark-description">I&#x27;m what is commonly named an Aluropa Melanoleuca. Currently fourth year student in an engineering college of computer science, I&#x27;m first passionate of technologies. Even before my high school diploma (Baccalaureate S - SVT in france), I&#x27;ve study computer science and on-board systems. However, I haven&#x27;t discovered github at this time, then this repository collection let me introduce to you my projects done at EFREI Paris, my current college.</div>
+                </div>
+                <div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/zhou-efr</div>
+              </div>
+              <img src="https://avatars.githubusercontent.com/u/53347566?v=4?s=400" class="bookmark-image"/>
+            </a>
+          </figure>
+          <h2 id="60838e57-6534-4b77-bfd6-d5d07c67c520" class="">PNPT</h2>
+          <figure id="9e38f5dd-dfa2-4256-8d44-d32680954d93">
+            <a href="https://academy.tcm-sec.com/courses/1152300/lectures/24747382" class="bookmark source">
+              <div class="bookmark-info">
+                <div class="bookmark-text">
+                  <div class="bookmark-title">Identifying Our Target</div>
+                  <div class="bookmark-description">Learn how to hack like a pro by a pro. 25 hours of up to date practical hacking techniques with absolutely no filler.</div>
+                </div>
+                <div class="bookmark-href"><img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:32,height:32/https://file-uploads.teachablecdn.com/40430d7de92349989d27dce71f7756f1/d857671ed3934419bc21e12c8952834e" class="icon bookmark-icon"/>https://academy.tcm-sec.com/courses/1152300/lectures/24747382</div>
+              </div>
+              <img src="https://file-uploads.teachablecdn.com/956925ec734a46efbb0ac43c562eeff1/5d0949b474054798bee6d56f5e19b64d" class="bookmark-image"/>
+            </a>
+          </figure>
+          <h2 id="3ed08081-f546-480d-a6a4-647d475af6b4" class="">Useful links &amp; files</h2>
+          <figure id="36cc3ffa-9ba7-4b5b-91b0-f1afd1d03b3b" class="link-to-page"><a href="https://www.notion.so/Usefull-link-and-tab-36cc3ffa9ba74b5b91b0f1afd1d03b3b"><span class="icon">🔗</span>Usefull link and tab</a></figure>
+          <div id="ce2e4258-bee7-4dbb-b0b5-0ac5e8524533" class="collection-content">
+            <h4 class="collection-title">OSINT</h4>
+            <table class="collection-content">
+              <thead>
+              <tr>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle">
+                     <path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path>
+                  </svg>
+               </span>
+                  Name
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt">
+                     <path d="M7.01356 14.0001C8.8042 14.0001 10.5958 13.3107 11.9575 11.9324C14.681 9.21201 14.6808 4.7603 11.9571 2.04013C9.23336 -0.680043 4.77573 -0.680043 2.05199 2.04013C0.727519 3.36277 0 5.13301 0 6.99553C0 8.8764 0.727811 10.6285 2.05199 11.9509C3.43207 13.3106 5.22243 14.0001 7.01356 14.0001ZM3.72947 7.00914V8.461V8.65543H3.92382H5.34563H8.2794H8.4738V8.461V5.52541V3.37947V3.18502H8.2794H6.82747H6.63307V3.37947V6.81467H3.92382H3.72947V7.00914ZM1.83985 6.99553C1.83985 5.61698 2.38099 4.32597 3.36061 3.3477C5.36746 1.34337 8.64803 1.34062 10.6585 3.33944C10.6613 3.34219 10.6639 3.34494 10.6668 3.3477C12.676 5.3546 12.6763 8.63642 10.6668 10.6434C8.65705 12.6504 5.37031 12.6504 3.36061 10.6434C2.38099 9.66506 1.83985 8.37408 1.83985 6.99553Z"></path>
+                  </svg>
+               </span>
+                  Created
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus">
+                     <path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path>
+                  </svg>
+               </span>
+                  Status
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="f84d4e8c-3988-4625-948f-8b6e872390b1">
+                <td class="cell-title"><a href="https://www.notion.so/First-steps-f84d4e8c39884625948f8b6e872390b1"><span class="icon">🃏</span>First steps</a></td>
+                <td class="cell-kIPR"><time>@11 août 2022 19:21</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="0fae4cc7-ff35-4fe5-9609-a6862f7bc87e">
+                <td class="cell-title"><a href="https://www.notion.so/Image-OSINT-0fae4cc7ff354fe59609a6862f7bc87e"><span class="icon">🌇</span>Image OSINT</a></td>
+                <td class="cell-kIPR"><time>@12 août 2022 15:02</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="990c089d-dcbf-4a11-89a9-d6ba59c9f565">
+                <td class="cell-title"><a href="https://www.notion.so/Email-Pwd-Username-OSINT-990c089ddcbf4a1189a9d6ba59c9f565"><span class="icon">📨</span>Email / Pwd / Username OSINT</a></td>
+                <td class="cell-kIPR"><time>@12 août 2022 16:13</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="8ffaff4e-23cd-4b39-a103-d10a08af19c1">
+                <td class="cell-title"><a href="https://www.notion.so/People-OSINT-8ffaff4e23cd4b39a103d10a08af19c1"><span class="icon">📦</span>People OSINT</a></td>
+                <td class="cell-kIPR"><time>@13 août 2022 17:00</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="e2c24025-794e-4d2d-96af-ed4c59aa22bf">
+                <td class="cell-title"><a href="https://www.notion.so/Social-Media-OSINT-e2c24025794e4d2d96afed4c59aa22bf"><span class="icon">🚬</span>Social Media OSINT</a></td>
+                <td class="cell-kIPR"><time>@13 août 2022 17:47</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="ebeb76d9-1b44-45a1-bd05-57bd2b03ed5f">
+                <td class="cell-title"><a href="https://www.notion.so/Website-OSINT-ebeb76d91b4445a1bd0557bd2b03ed5f">Website OSINT</a></td>
+                <td class="cell-kIPR"><time>@16 août 2022 11:31</time></td>
+                <td class="cell-sKoJ">
+               <span class="status-value select-value-color-blue">
+                  <div class="status-dot status-dot-color-blue"></div>
+                  In progress
+               </span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="a84f1d1e-e28f-4835-a66b-557b543497fd">
+            <div style="font-size:1.5em"><span class="icon">🗒️</span></div>
+            <div style="width:100%">TODO : find my sock puppet</div>
+          </figure>
+          <div id="0c659003-ea9f-4f15-896d-f1c6b1600c69" class="collection-content">
+            <h4 class="collection-title">Practical Ethical Hacking</h4>
+            <table class="collection-content">
+              <thead>
+              <tr>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle">
+                     <path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path>
+                  </svg>
+               </span>
+                  Name
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText">
+                     <path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path>
+                  </svg>
+               </span>
+                  Commentaire
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect">
+                     <path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path>
+                  </svg>
+               </span>
+                  Status
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus">
+                     <path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path>
+                  </svg>
+               </span>
+                  Tags
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="01406e7c-348c-4624-a03e-d4f789652ee7">
+                <td class="cell-title"><a href="https://www.notion.so/Attacking-Active-Directory-Post-Compromise-01406e7c348c4624a03ed4f789652ee7"><span class="icon">🛅</span>Attacking Active Directory: Post-Compromise</a></td>
+                <td class="cell-Csti">Pratical application of ZeroLogon</td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="ceab3e43-f1cf-4d6b-b191-de5596fd8f8e">
+                <td class="cell-title"><a href="https://www.notion.so/Web-App-Enumeration-ceab3e43f1cf4d6bb191de5596fd8f8e"><span class="icon">🌐</span>Web App Enumeration</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="7fa449a6-448b-4b23-8063-f352e848c95e">
+                <td class="cell-title"><a href="https://www.notion.so/Scanning-Enumeration-Nessus-7fa449a6448b4b238063f352e848c95e"><span class="icon">🖨️</span>Scanning &amp; Enumeration &amp; Nessus</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="23d6fb4d-5e9a-420e-b85d-3b08a9e7c32f">
+                <td class="cell-title"><a href="https://www.notion.so/Legal-Documents-and-Report-Writing-23d6fb4d5e9a420eb85d3b08a9e7c32f"><span class="icon">📜</span>Legal Documents and Report Writing</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="df401e8b-4d66-4990-bc54-5051c3304d66">
+                <td class="cell-title"><a href="https://www.notion.so/Information-Gathering-df401e8b4d664990bc545051c3304d66"><span class="icon">🥸</span>Information Gathering</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="e18ee784-f51f-465f-aaa0-201eba384a1b">
+                <td class="cell-title"><a href="https://www.notion.so/Web-app-vulnerabilities-e18ee784f51f465faaa0201eba384a1b"><img class="icon" src="/files/image/OWASPJuice.png"/>Web app vulnerabilities</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="766009dd-a718-4aef-83b8-8080ad39a28f">
+                <td class="cell-title"><a href="https://www.notion.so/Post-Exploitation-766009dda7184aef83b88080ad39a28f"><span class="icon">🧙</span>Post Exploitation</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="291d7ea6-49de-4e16-a3e7-183d8cf982e2">
+                <td class="cell-title"><a href="https://www.notion.so/Attacking-Active-Directory-Initial-Attack-Vectors-291d7ea649de4e16a3e7183d8cf982e2"><span class="icon">🚪</span>Attacking Active Directory: Initial Attack Vectors</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="55007498-7ef7-4360-87c2-8e455421e23d">
+                <td class="cell-title"><a href="https://www.notion.so/Wireless-pentesting-550074987ef7436087c28e455421e23d"><span class="icon">📡</span>Wireless pentesting</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="5f6f1bca-bafa-4cc0-9857-4134784def5b">
+                <td class="cell-title"><a href="https://www.notion.so/Exploit-development-buffer-overflow-5f6f1bcabafa4cc098574134784def5b"><span class="icon">🌊</span>Exploit development (buffer overflow)</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="5aa2336d-aa0b-4535-9def-95c74050e395">
+                <td class="cell-title"><a href="https://www.notion.so/Capstone-5aa2336daa0b45359def95c74050e395"><span class="icon">📝</span>Capstone</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-red">
+                  <div class="status-dot status-dot-color-red"></div>
+                  pause
+               </span>
+                </td>
+              </tr>
+              <tr id="8021d1c9-83a5-4f73-b7db-771260f026c3">
+                <td class="cell-title"><a href="https://www.notion.so/Exploitation-Basic-8021d1c983a54f73b7db771260f026c3"><span class="icon">⛏️</span>Exploitation Basic</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="2c24ca65-7990-4a12-a960-3fec78bbb33d">
+                <td class="cell-title"><a href="https://www.notion.so/Networking-2c24ca6579904a12a9603fec78bbb33d"><span class="icon">🪲</span>Networking</a></td>
+                <td class="cell-Csti">Revision de network &amp; protocols</td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              <tr id="3aeb0d38-e6e1-4dcd-8ca3-6f5bf56d5c0c">
+                <td class="cell-title"><a href="https://www.notion.so/Introduction-to-Linux-3aeb0d38e6e14dcd8ca36f5bf56d5c0c"><span class="icon">🐉</span>Introduction to Linux</a></td>
+                <td class="cell-Csti"></td>
+                <td class="cell-FtAv"></td>
+                <td class="cell-\RvL">
+               <span class="status-value select-value-color-green">
+                  <div class="status-dot status-dot-color-green"></div>
+                  Done
+               </span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <h1 id="e9863023-92ff-48fd-b4cf-e8155031bd49" class="">AWS security learning plan</h1>
+          <figure id="ac4603c4-6d85-4d2e-a5f9-c648a97de5b5">
+            <a href="https://explore.skillbuilder.aws/learn/lp/91/security-learning-plan" class="bookmark source">
+              <div class="bookmark-info">
+                <div class="bookmark-text">
+                  <div class="bookmark-title">Self-paced digital training on AWS - AWS Skill Builder</div>
+                  <div class="bookmark-description">Skill Builder provides 500+ free digital courses, 25+ learning plans, and 19 Ramp-Up Guides to help you expand your knowledge. Courses cover more than 30 AWS solutions for various skill levels. Skill Builder offers self-paced, digital training on demand in 17 languages when and where it&#x27;s convenient for you.</div>
+                </div>
+                <div class="bookmark-href">https://explore.skillbuilder.aws/learn/lp/91/security-learning-plan</div>
+              </div>
+            </a>
+          </figure>
+          <div id="b25acb8e-1a54-4599-ac1f-bb3a1ab6b199" class="collection-content">
+            <h4 class="collection-title">AWS security learning plan</h4>
+            <table class="collection-content">
+              <thead>
+              <tr>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle">
+                     <path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path>
+                  </svg>
+               </span>
+                  Name
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText">
+                     <path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path>
+                  </svg>
+               </span>
+                  Comment
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect">
+                     <path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path>
+                  </svg>
+               </span>
+                  Tags
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="fc2c0ccd-dca2-4dc2-9609-20225241dc07">
+                <td class="cell-title"><a href="https://www.notion.so/Getting-Started-with-AWS-Security-Identity-and-Compliance-fc2c0ccddca24dc2960920225241dc07"><span class="icon">🛡️</span>Getting Started with AWS Security, Identity, and Compliance</a></td>
+                <td class="cell-iA[\"></td>
+                <td class="cell-u]=w"><span class="selected-value select-value-color-pink">in progress</span></td>
+              </tr>
+              <tr id="9bf8f90b-aae6-47ca-925e-6a69b0007449">
+                <td class="cell-title"><a href="https://www.notion.so/Shared-responsibility-model-9bf8f90baae647ca925e6a69b0007449"><span class="icon">🤝</span>Shared responsibility model</a></td>
+                <td class="cell-iA[\">5 min - same as Azure</td>
+                <td class="cell-u]=w"><span class="selected-value select-value-color-green">done</span></td>
+              </tr>
+              <tr id="0e8456ba-8c23-48a5-b5c2-f2012f9d9a5b">
+                <td class="cell-title"><a href="https://www.notion.so/AWS-Fundamental-0e8456ba8c2348a5b5c2f2012f9d9a5b"><span class="icon">⛩️</span>AWS Fundamental</a></td>
+                <td class="cell-iA[\">Nothing to write down</td>
+                <td class="cell-u]=w"><span class="selected-value select-value-color-green">done</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="882b76a8-e88b-4544-8dcf-a743a15d3252" class="">
+          </p>
+          <h1 id="1d4075b8-2ab9-4624-abb2-0274bab0b9e8" class="">Azure Security Engineer Associate</h1>
+          <figure id="cee46a35-8c68-4a88-ae44-148d071825cf">
+            <a href="https://docs.microsoft.com/fr-fr/certifications/azure-security-engineer/" class="bookmark source">
+              <div class="bookmark-info">
+                <div class="bookmark-text">
+                  <div class="bookmark-title">Microsoft Certified: Azure Security Engineer Associate - Learn</div>
+                  <div class="bookmark-description">Les Ingénieurs Sécurité Azure sont chargés de mettre en œuvre des contrôles de sécurité qui protègent l&#x27;identité, l&#x27;accès, les données, les applications et les réseaux dans les environnements cloud et hybrides dans le cadre d&#x27;une infrastructure de bout en bout.</div>
+                </div>
+                <div class="bookmark-href"><img src="https://docs.microsoft.com/favicon.ico" class="icon bookmark-icon"/>https://docs.microsoft.com/fr-fr/certifications/azure-security-engineer/</div>
+              </div>
+              <img src="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png" class="bookmark-image"/>
+            </a>
+          </figure>
+          <p id="bf0f816a-d7e1-4b30-bd84-effc0bd577b8" class="">
+          </p>
+          <div id="a2999ebd-cb98-4115-bae4-fdbc697f556b" class="collection-content">
+            <h4 class="collection-title">Azure security associate</h4>
+            <table class="collection-content">
+              <thead>
+              <tr>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle">
+                     <path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path>
+                  </svg>
+               </span>
+                  Name
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText">
+                     <path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path>
+                  </svg>
+               </span>
+                  Comments
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect">
+                     <path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path>
+                  </svg>
+               </span>
+                  Tags
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="999776d4-01f2-4e1a-a39c-50f32e941a7b">
+                <td class="cell-title"><a href="https://www.notion.so/Notions-de-base-de-la-s-curit-de-la-conformit-et-des-identit-s-Microsoft-999776d401f24e1aa39c50f32e941a7b">Notions
+                  de base de la sécurité, de la conformité et des identités Microsoft</a>
+                </td>
+                <td class="cell-nZzO"></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <h1 class="">Master Camp 2022</h1>
+          <div id="ace33d00-34df-4a3b-8d3d-eab59707992b" class="collection-content">
+            <h4 class="collection-title">MasterCamp 2022</h4>
+            <table class="collection-content">
+              <thead>
+              <tr>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle">
+                     <path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path>
+                  </svg>
+               </span>
+                  Name
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect">
+                     <path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path>
+                  </svg>
+               </span>
+                  Tags
+                </th>
+                <th>
+               <span class="icon property-icon">
+                  <svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText">
+                     <path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path>
+                  </svg>
+               </span>
+                  Comments
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="0ad08d49-5e0f-42ea-b583-f0fccda796f7">
+                <td class="cell-title"><a href="https://www.notion.so/OPCI-Main-project-0ad08d495e0f42eab583f0fccda796f7">OPCI - Main project</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-yellow">project</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="18a1427d-583f-481b-8885-3302fc007cf9">
+                <td class="cell-title"><a href="https://www.notion.so/TP1-Le-d-but-d-un-voyage-18a1427d583f481b88853302fc007cf9">TP1 - Le début d’un voyage</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="bddc9d56-7b32-4460-8b97-17cb37cf241c">
+                <td class="cell-title"><a href="https://www.notion.so/TP2-Prise-en-main-de-Debian-bddc9d567b3244608b9717cb37cf241c">TP2 - Prise en main de Debian</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="b099e020-b7b7-481c-ac3d-c94d5fe7338e">
+                <td class="cell-title"><a href="https://www.notion.so/TP3-Routage-statique-NAT-et-Parefeu-b099e020b7b7481cac3dc94d5fe7338e">TP3 - Routage statique NAT et Parefeu</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="97c9f7ec-a54d-4cc3-8202-eddf1480071c">
+                <td class="cell-title"><a href="https://www.notion.so/TP4-Service-DHCP-DNS-97c9f7eca54d4cc38202eddf1480071c">TP4 - Service DHCP &amp; DNS</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="3477c5ca-8f6b-4a82-9944-bcc71966ebd0">
+                <td class="cell-title"><a href="https://www.notion.so/TP5-TCP-et-Quality-Of-Service-3477c5ca8f6b4a829944bcc71966ebd0">TP5 - TCP et Quality Of Service</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="5a11180f-2b01-4f2a-8f4d-4a39abc2a648">
+                <td class="cell-title"><a href="https://www.notion.so/TP6-Test-d-intrusion-et-white-hacking-5a11180f2b014f2a8f4d4a39abc2a648">TP6 - Test d’intrusion et white hacking</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="6e22ac23-e103-4fd4-b4bd-7a710976cb52">
+                <td class="cell-title"><a href="https://www.notion.so/TP7-TSL-SSL-6e22ac23e1034fd4b4bd7a710976cb52">TP7 - TSL/SSL</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-green">done</span><span class="selected-value select-value-color-default">to transcript</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              <tr id="fbe738d3-d260-40cd-91f2-b510ffd5584a">
+                <td class="cell-title"><a href="https://www.notion.so/TP8-Vulnerabilites-Web-fbe738d3d26040cd91f2b510ffd5584a">TP8 - Vulnerabilites Web</a></td>
+                <td class="cell-FRt_"><span class="selected-value select-value-color-orange">to upload</span></td>
+                <td class="cell-jb];"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div></article>
+    </div>
+  </div>
+</div>
+
+{{ end }}
