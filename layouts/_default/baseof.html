@@ -9,6 +9,13 @@
     <script>
         tailwind.config = {
             theme: {
+                screens : {
+                    '2xl': { 'raw': '(min-device-height: 1536px)' },
+                    'xl': { 'raw': '(min-device-height: 1280px)' },
+                    'lg': { 'raw': '(min-device-height: 1024px)' },
+                    'md': { 'raw': '(min-device-height: 768px)' },
+                    'sm': { 'raw': '(min-device-height: 640px)' },
+                },
                 extend: {
                     colors: {
                         darkgreen: '#344342',
