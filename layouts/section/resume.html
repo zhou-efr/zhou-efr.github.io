@@ -18,7 +18,7 @@
     }
   }
 </style>
-{{ $parallax := resources.Get "images/resume-bg-16-9.jpg" }}
+{{ $parallax := resources.Get "images/resume-bg-16-9-min.jpg" }}
 
 <div class="w-screen relative flex flex-col items-center parallax bg-[url('{{$parallax.RelPermalink}}')] bg-fixed bg-cover lg:bg-none">
   <img src="{{ $parallax.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
