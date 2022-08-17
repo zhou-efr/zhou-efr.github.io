@@ -7,31 +7,63 @@ title = 'Grosser Panda.JPG'
 [markup.goldmark.renderer]
     unsafe= true
 
-[menu]
-    [[menu.main]]
-      identifier = "Home"
-      name = 'Home'
-      page = 'Home'
-      url = '/'
-      weight = 1
-    [[menu.main]]
-      identifier = "Resume"
-      name = 'Resume'
-      page = 'Resume'
-      url = '/resume'
-      weight = 2
-    [[menu.main]]
-      identifier = "Cyber-log"
-      name = 'Cyber-log'
-      page = 'Cyber-log'
-      url = '/cyber-log'
-      weight = 3
-    [[menu.main]]
-      identifier = 'About'
-      name = 'About'
-      page = 'About'
-      url = '/about'
-      weight = 4
+[languages]
+    [languages.en]
+        [languages.en.params]
+            homeLink = 'https://zhou-efr.github.io'
+        [languages.en.menu]
+            [[languages.en.menu.main]]
+              identifier = "Home"
+              name = 'Home'
+              page = 'Home'
+              url = '/'
+              weight = 1
+            [[languages.en.menu.main]]
+              identifier = "Resume"
+              name = 'Resume'
+              page = 'Resume'
+              url = '/resume'
+              weight = 2
+            [[languages.en.menu.main]]
+              identifier = "Cyber-log"
+              name = 'Cyber-log'
+              page = 'Cyber-log'
+              url = '/cyber-log'
+              weight = 3
+            [[languages.en.menu.main]]
+              identifier = 'About'
+              name = 'About'
+              page = 'About'
+              url = '/about'
+              weight = 4
+        [languages.fr]
+            [languages.fr.params]
+                homeLink = 'https://zhou-efr.github.io/fr'
+            [languages.fr.menu]
+                [[languages.fr.menu.main]]
+                  identifier = "Accueil"
+                  name = 'Accueil'
+                  page = 'Accueil'
+                  url = '/fr'
+                  weight = 1
+                [[languages.fr.menu.main]]
+                  identifier = "CV"
+                  name = 'CV'
+                  page = 'CV'
+                  url = '/fr/resume'
+                  weight = 2
+                [[languages.fr.menu.main]]
+                  identifier = "Cyber-log"
+                  name = 'Cyber-log'
+                  page = 'Cyber-log'
+                  url = '/cyber-log'
+                  weight = 3
+                [[languages.fr.menu.main]]
+                  identifier = 'À propos'
+                  name = 'À propos'
+                  page = 'À propos'
+                  url = '/fr/about'
+                  weight = 4
 
 
 [module]

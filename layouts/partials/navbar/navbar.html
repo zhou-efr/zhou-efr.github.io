@@ -19,8 +19,8 @@
     >
     <div class="flex flex-row items-center text-xl gap-4 w-full leading-loose">
       {{ $logo := resources.Get "images/logo.svg" }}
-      <a href="/" class="block"> <img class="h-10 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
-      <a class="navbar-link" href="/">Grosser Panda.JPG</a>
+      <a href="{{ .Params.homeLink }}" class="block"> <img class="h-5 object-contains transform transition-all hover:scale-110" src="{{ $logo.RelPermalink }}" alt="TDZ logo" /> </a>
+      <a class="navbar-link" href="{{ .Params.homeLink }}">Grosser Panda.JPG</a>
       {{- $currentPage := . -}}
       {{ range .Site.Menus.main -}}
       <a class='navbar-link' href="{{ .URL }}">
@@ -28,8 +28,17 @@
       </a>
       {{- end }}
       <a class="navbar-link" href="https://wwf.fr/" target="_blank">WWF</a>
+
     </div>
 
+
+    {{ if in .Permalink "fr" }}
+    {{ $flag := resources.Get "images/United-Kingdoms.png" }}
+    <a class="justify-self-end" href="{{ .Site.BaseURL }}"><img class="h-8 object-contains transform transition-all hover:scale-110" src="{{ $flag.RelPermalink }}" alt="UK flag"/></a>
+    {{ else }}
+    {{ $flag := resources.Get "images/France.png" }}
+    <a class="justify-self-end" href="{{ .Site.BaseURL }}/fr"><img class="h-8 object-contains transform transition-all hover:scale-110" src="{{ $flag.RelPermalink }}" alt="French flag"/></a>
+    {{ end }}
     {{ $scrollicon := resources.Get "images/scroll-icon.svg" }}
     <img id="scrollButton" class="h-10 mr-3 object-contains justify-self-end cursor-pointer transform transition-all hover:scale-110" src="{{ $scrollicon.RelPermalink }}" alt="scrolling icon" />
     <div class="w-4/5 h-px bg-gold absolute left-1/2 -bottom-3 transform -translate-x-1/2" />
