@@ -16,7 +16,7 @@ staticurl: ""
 [linkedin.com/in/zhou-killian/](https://www.linkedin.com/in/zhou-killian/)  
 [github.com/zhou-efr/](https://github.com/zhou-efr/)  
 [bit.ly/cybersecurity-notepad](https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00)  
-[Lien ver ce CV en pdf](https://drive.google.com/file/d/1ymcWZ3qvcEbkIoppa50XFpZMf3vANta6/view?usp=sharing)  
+[Lien vers ce CV en pdf](https://drive.google.com/file/d/1ymcWZ3qvcEbkIoppa50XFpZMf3vANta6/view?usp=sharing)  
 
 ## Formations
 ### EFREI Paris / 2019 - 2024 
