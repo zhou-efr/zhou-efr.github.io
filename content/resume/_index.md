@@ -16,7 +16,7 @@ staticurl: ""
 [linkedin.com/in/zhou-killian/](https://www.linkedin.com/in/zhou-killian/)  
 [github.com/zhou-efr/](https://github.com/zhou-efr/)  
 [bit.ly/cybersecurity-notepad](https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00)  
-[Link to this resume in PDF](https://drive.google.com/file/d/1PcFmhvcRCkgRKE52uYK6ZtbfUtVkjOEw/view?usp=sharing)
+[Link to this resume in PDF](https://drive.google.com/file/d/1PcFmhvcRCkgRKE52uYK6ZtbfUtVkjOEw/view?usp=sharing)  
 [Link to my original CV](https://drive.google.com/file/d/1yiuxVlKLg38lMadizOaL4zmvewkH1qdc/view?usp=sharing)  
 
 ## Formations
