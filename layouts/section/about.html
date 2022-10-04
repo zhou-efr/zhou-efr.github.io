@@ -1,36 +1,7 @@
 {{ define "main" }}
 
-{{ $wwf := resources.Get "images/logo-wwf.svg" }}
-<img src="{{ $wwf.RelPermalink }}" alt="WWF" class="absolute object-cover h-full -top-5 md:left-1/2 z-0">
+<script>
+    window.location.href = "https://zhou-efr.notion.site/zhou-efr/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00";
+</script>
 
-<div
-        id="AboutUsContainer"
-        class="
-            mt-24
-            p-5
-            w-screen h-screen
-        "
->
-    <div>
-        <h2 class="text-2xl text-grey font-regular">大熊猫</h2>
-        <h1 class="text-5xl text-darkgreen font-black">Grosser Panda.JPG</h1>
-        <p class="w-full md:w-2/3 lg:w-3/4 break-words mt-5 lg:text-xl">
-            Grosser_Panda.JPG is the name of a picture of a panda in the Hong Kong zoo. More than just that, it's the
-            main picture of the Wikipedia panda page. I choose this name because, first I love pandas, by multiplying
-            this picture on my friends' laptops I ended by knowing its URL by heart
-            (https://wikimedia.upoad.org/wikipedia/commons/0/0f/Grosser_Panda.JPG).
-        </p>
-        <div class="w-full md:w-1/2 break-words mt-5 lg:text-xl">
-            I am Zhou Killian, EFREI Student in cybersecurity IS and governance (<a href="/resume">find my resume
-            here</a>). However, during the last four years, I learn a lot about web development, at least enough to
-            develop this static website quickly.
-        </div>
-        <div class="w-full md:w-1/2 break-words mt-5 lg:text-xl">
-            This website is made with HUGO static site generator associated with Tailwindcss. You'll find aside the
-            credits for each icon and picture, please note that the majority are issued from
-            <a href="https://thenounproject.com">Noun Project</a> and <a href="unsplash.com/">Unsplash</a>. Other picture
-            or icon is made by me.
-        </div>
-    </div>
-</div>
 {{ end }}

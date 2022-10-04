@@ -1,32 +1,8 @@
 {{ define "main" }}
-<style type="text/tailwindcss">
-  @layer components {
-    h1 {
-      @apply text-4xl font-bold mt-5 lg:text-6xl;
-    }
 
-    h2 {
-      @apply text-3xl font-semibold mt-4 lg:text-5xl;
-    }
+<script>
+  window.location.href = "https://zhou-efr.github.io/";
+</script>
 
-    h3 {
-      @apply text-xl font-semibold mt-3 lg:text-2xl;
-    }
-
-    p {
-      @apply lg:text-lg;
-    }
-  }
-</style>
-{{ $parallax := resources.Get "images/resume-bg-16-9-min.jpg" }}
-
-<div class="w-screen relative flex flex-col items-center parallax pb-5 bg-[url('{{$parallax.RelPermalink}}')] bg-fixed bg-cover">
-  <img src="{{ $parallax.RelPermalink }}" alt="Singapore, Garden by the bay" class="w-screen hidden lg:block parallax__layer lg:[transform:translateZ(-1px)_scale(2)_translateX(-10px)]">
-  <div class="w-full parallax__layer parallax__layer--base text-darkgreen flex flex-col items-center pt-5">
-    <div class="card w-4/5 rounded-lg p-5 mb-5">
-      {{ .Content }}
-    </div>
-  </div>
-</div>
 
 {{ end }}
