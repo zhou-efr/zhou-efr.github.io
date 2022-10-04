@@ -37,6 +37,13 @@
     }
 </style>
 
+<div class="fixed flex top-5 right-10 gap-5">
+    {{ $flag := resources.Get "images/United-Kingdoms.png" }}
+    {{ $flagfr := resources.Get "images/France.png" }}
+    <a class="" href="{{ .Site.BaseURL }}"><img class="h-8 object-contains transform transition-all hover:scale-110" src="{{ $flag.RelPermalink }}" alt="UK flag"/></a>
+    <a class="" href="{{ .Site.BaseURL }}/fr"><img class="h-8 object-contains transform transition-all hover:scale-110" src="{{ $flagfr.RelPermalink }}" alt="French flag"/></a>
+</div>
+
 <div class="w-screen">
     <div class="w-screen flex flex-col gap-0">
         <div class="w-screen bg-darkiceblue flex flex-col items-center pt-36">
@@ -46,7 +53,7 @@
                 <p> Search for an internship in the field of cybersecurity </p>
                 <p> Duration: 5 months from November 2022 </p>
             </div>
-            <div class="font-2xl font-thin text-white tracking-wide flex flex-col gap-3 items-center w-2/3 text-center pt-28">
+            <div class="text-2xl font-thin text-white tracking-wide flex flex-col gap-3 items-center w-2/3 text-center pt-28">
                 <p>Self-taught developer for more than nine years, I am Zhou Killian, EFREI Paris student in cybersecurity IS and governance. Passionate about cybersecurity, I learn quickly and my motivation to work in cybersecurity led me to take the PNPT. I have therefore spent the last two months learning more about network and cloud security and the ISO 27001 standard in order to offer concrete skills during my M1 internship.</p>
                 <p>Outside this professional framework, I practice fencing and I am very involved in ICE, an association focused on electronics and embedded systems, of which I was the president.</p>
             </div>
