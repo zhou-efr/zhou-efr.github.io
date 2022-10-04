@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" id="html" class="[scroll-behavior:smooth] [scroll-snap-type:y_mandatory;]">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ .Page.Title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
+                fontFamily: {
+                    'body': ['Poppins', "'Roboto Light'", "system-ui", "sans-serif"],
+                },
                 screens : {
                     '2xl': { 'raw': '(min-width: 1536px)' },
                     'xl': { 'raw': '(min-width: 1280px)' },
@@ -24,7 +25,9 @@
                     colors: {
                         darkgreen: '#344342',
                         gold: '#DED2CC',
-                        grey: '#747B84'
+                        grey: '#747B84',
+                        darkiceblue: '#143649',
+                        lighticeblue: '#C9DDE9'
                     },
                     spacing: {
                         'screen': '100vh',
@@ -36,8 +39,20 @@
             }
         }
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPBGKSNB3C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-JPBGKSNB3C');
+    </script>
+
 </head>
-<body id="body" class="tracking-wider overflow-x-hidden" style="font-family: 'montserrat', 'Roboto Light', system-ui, sans-serif">
+<body id="body" class="tracking-wider overflow-x-hidden font-body font-light">
+
 <style type="text/tailwindcss">
     @tailwind base;
     @tailwind components;
@@ -49,15 +64,17 @@
         }
     }
 </style>
+
 {{ $navbarcss := resources.Get "css/navbar.css" }}
 <link href="{{ $navbarcss.RelPermalink }}" rel="stylesheet">
 {{ $parallaxcss := resources.Get "css/parallax.css" }}
 <link href="{{ $parallaxcss.RelPermalink }}" rel="stylesheet">
 {{ $card := resources.Get "css/card.css" }}
 <link href="{{ $card.RelPermalink }}" rel="stylesheet">
-{{ partial "navbar/navbar.html" . }}
+
 {{ block "main" . }}
-<!-- block content -->
+
 {{ end  }}
+
 </body>
 </html>
