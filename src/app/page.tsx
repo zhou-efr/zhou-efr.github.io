@@ -2,8 +2,13 @@ import B from "@/components/b";
 import ExperienceBox from "@/components/experiencebox";
 import {data} from "@/data";
 import {get_icon} from "@/icons";
+import MailIcon from "@/icons/mail.svg";
+import LinkedInIcon from "@/icons/linkedin.svg";
+import GithubIcon from "@/icons/github.svg";
+import Image from "next/image";
 
 export default function Home() {
+
     const get_experience = (experience: "educations" | "experiences" | "projects" | "certifications", size: "medium" | "large" | "full", color: "white" | "darkgray" = "white") => {
         return data[experience].map((subdata, index) => {
             return (
@@ -107,6 +112,34 @@ export default function Home() {
                         {
                             get_experience("projects", "full", "darkgray")
                         }
+                    </div>
+                </div>
+            </section>
+            <section className="w-screen flex flex-col justify-center items-center gap-5 py-20 bg-lightgray text-darkgray px-5 -mt-14">
+                <div className={"flex flex-col justify-center items-center w-5/6 border-t border-darkgray pt-14"}>
+                    <div className={"flex flex-wrap justify-center items-start w-5/6 md:w-3/4"}>
+                        <div className={"flex flex-col justify-start items-end w-1/2"}>
+                            <h2 className={"text-4xl font-semibold text-center pb-5 w-full"}>Me contacter</h2>
+                            <div className={"flex flex-row justify-center items-center gap-1 mt-10 h-10 w-full"}>
+                                <Image src={MailIcon} alt={"Send me an email"} className={"h-8 contact-icon hover:opacity-50 transition-all"} />
+                                <Image src={LinkedInIcon} alt={"Contact me on LinkedIn"} className={"h-10 contact-icon hover:opacity-50 transition-all"} />
+                                <Image src={GithubIcon} alt={"Follow me on GitHub"} className={"h-10 contact-icon hover:opacity-50 transition-all"} />
+                            </div>
+                        </div>
+                        <div className={"flex flex-col justify-start items-center w-1/2 mt-2"}>
+                            <div className={"flex flex-col gap-3"}>
+                                <div className={"flex flex-col items-start"}>
+                                    <h3 className={"text-2xl font-semibold w-full"}>LinkedIn</h3>
+                                    <p>Killian Zhou</p>
+                                    <a className={"hover:text-verylightgray"} href={"https://linkedin.com/in/zhou-killian/"} target={"_blank"}>linkedin.com/in/zhou-killian/</a>
+                                </div>
+                                <div className={"flex flex-col items-start"}>
+                                    <h3 className={"text-2xl font-semibold w-full"}>Courriel</h3>
+                                    <p>Killian Zhou</p>
+                                    <a className={"hover:text-verylightgray"} href={"mailto:zhou-efr@gmail.com"} target={"_blank"}>zhou-efr@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
