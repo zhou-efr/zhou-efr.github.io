@@ -1,0 +1,52 @@
+{
+  "experiences": [
+    {
+      "title": "CGI BC",
+      "location": "",
+      "date": "2023-2024",
+      "subtitle": "Consultant Cybersécurité Junior",
+      "description": "Réalisation d'analyses de risque en utilisant la méthode EBIOS RM. Échanges complets avec les clients pour définir des mesures de cybersécurité alignées avec les processus et besoins des entreprises.",
+      "iconname": "cgi"
+    },
+    {
+      "title": "Brainsecurity",
+      "location": "",
+      "date": "2022-2023",
+      "subtitle": "Développeur Full-Stack",
+      "description": "Conception, développement et maintenance d'une plateforme NextJs pour la formation des entreprises à la cybersécurité. Refonte de l'ancienne application web et sécurisation de l'application administrative de l'entreprise.",
+      "iconname": "brain"
+    },
+    {
+      "title": "SEPEFREI",
+      "location": "JE",
+      "date": "2019-2023",
+      "subtitle": "Dévelopeur web et script pour SEPEFREI Junior Entreprise",
+      "description": "Création de plusieurs types d'applications web en javascript et de scripts en python dans des situations critiques et dans des délais très courts pour les clients.",
+      "iconname": "code"
+    },
+    {
+      "title": "ICE EFREI",
+      "location": "",
+      "date": "2021-2022",
+      "subtitle": "Président de ICE EFREI, Association de R&D",
+      "description": "Compétences développées : gestion de projets et de budget, administration, communication, pédagogie, animation d’évènements, développement embarqué, impression 3D.",
+      "iconname": "ice"
+    },
+    {
+      "title": "Société Générale",
+      "location": "",
+      "date": "2021",
+      "subtitle": "Chargé de prospection et d’assistance aux chargés d’affaires",
+      "description": "Compétences développées : suivi de prospection, gestion de factures, notions en gestion de portefeuille et d’administration associative.",
+      "iconname": "bank"
+    },
+    {
+      "title": "Night Drop",
+      "location": "",
+      "date": "2020-2021",
+      "subtitle": "Conseiller commercial",
+      "description": "Compétences développées : communication, relation client, conseil, organisation, gestion de la caisse.",
+      "iconname": "dices"
+    }
+  ]
+}

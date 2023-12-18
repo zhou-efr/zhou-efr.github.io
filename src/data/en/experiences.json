@@ -1,0 +1,52 @@
+{
+  "experiences": [
+    {
+      "title": "CGI BC",
+      "location": "",
+      "date": "2023-2024",
+      "subtitle": "Junior Cybersecurity Consultant",
+      "description": "In my role at CGI Business Consulting, I conduct cybersecurity risk assessments using the EBIOS RM method. I work closely with teams to infuse cybersecurity practices into business processes, creating detailed reports and strategies to bolster client security postures.",
+      "iconname": "cgi"
+    },
+    {
+      "title": "Brainsecurity",
+      "location": "",
+      "date": "2022-2023",
+      "subtitle": "Full-Stack Developer",
+      "description": "Design, development, and maintenance of a NextJs platform for training companies in cybersecurity. Redesigning the old web application and securing the company's administrative application.",
+      "iconname": "brain"
+    },
+    {
+      "title": "SEPEFREI",
+      "location": "JE",
+      "date": "2019-2023",
+      "subtitle": "Web Developer and Script Writer for SEPEFREI Junior Enterprise",
+      "description": "Creation of various types of web applications in javascript and critical situation python scripts, under very tight deadlines for clients.",
+      "iconname": "code"
+    },
+    {
+      "title": "ICE EFREI",
+      "location": "",
+      "date": "2021-2022",
+      "subtitle": "President of ICE EFREI, R&D Association",
+      "description": "Skills developed: project and budget management, administration, communication, pedagogy, event hosting, embedded development, 3D printing.",
+      "iconname": "ice"
+    },
+    {
+      "title": "Société Générale",
+      "location": "",
+      "date": "2021",
+      "subtitle": "Prospection Officer and Business Managers’ Assistant",
+      "description": "Skills developed: follow-up on prospection, invoice management, notions in portfolio management, and associative administration.",
+      "iconname": "bank"
+    },
+    {
+      "title": "Night Drop",
+      "location": "",
+      "date": "2020-2021",
+      "subtitle": "Sales Advisor",
+      "description": "Skills developed: communication, customer relations, consulting, organization, cash management.",
+      "iconname": "dices"
+    }
+  ]
+}

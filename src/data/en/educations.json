@@ -1,0 +1,20 @@
+{
+  "educations": [
+    {
+      "title": "EFREI Paris",
+      "location": "",
+      "date": "2019 - 2024",
+      "subtitle": "Digital Engineering Degree",
+      "description": "Digital Engineering degree specialized in IT systems cybersecurity and governance. Computer engineering training, IT Systems Cybersecurity, Cyber Governance, IT Systems Administration, mathematics, and communication, entirely in English.",
+      "iconname": "efrei"
+    },
+    {
+      "title": "APU",
+      "location": "Kuala Lumpur",
+      "date": "2022",
+      "subtitle": "",
+      "description": "Exchange semester - EFREI Bachelor of Business, Computing, and Engineering.",
+      "iconname": "planet"
+    }
+  ]
+}

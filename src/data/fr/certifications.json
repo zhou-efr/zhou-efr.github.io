@@ -1,0 +1,36 @@
+{
+  "certifications": [
+    {
+      "title": "PMJR",
+      "location": "",
+      "date": "En cours",
+      "subtitle": "",
+      "description": "Practical Malware Junior Reasercher",
+      "iconname": "tcmsecurity"
+    },
+    {
+      "title": "PMJT",
+      "location": "",
+      "date": "En cours",
+      "subtitle": "",
+      "description": "Practical Mobile Junior Tester",
+      "iconname": "tcmsecurity"
+    },
+    {
+      "title": "OSCP",
+      "location": "Certified",
+      "date": "2023",
+      "subtitle": "",
+      "description": "Offensive Security Certified Professional",
+      "iconname": "offsec"
+    },
+    {
+      "title": "PNPT",
+      "location": "Certified",
+      "date": "2022",
+      "subtitle": "",
+      "description": "Practical Network Penetration Tester",
+      "iconname": "tcmsecurity"
+    }
+  ]
+}

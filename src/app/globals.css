@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inner .img {
+    height: 40rem;
+    width: 100%;
+    margin-left: -20px;
+    object-fit: contain;
+}
+
+.inner .img:last-of-type {
+    padding-left: 0;
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 40rem;
+}
+
+.wrapper {
+    position: absolute;
+    display: flex;
+}
+
+.inner section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+    @apply w-[200vh] lg:w-[210vw];
+}
+
+@keyframes swipe {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(-100%);
+    }
+}

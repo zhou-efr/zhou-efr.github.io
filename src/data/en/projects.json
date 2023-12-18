@@ -1,0 +1,57 @@
+{
+  "projects": [
+    {
+      "title": "Secure Architecture",
+      "location": "",
+      "date": "",
+      "subtitle": "",
+      "description": "A project involving 8 students that required the total reconstruction of an IS on an ESXi. Implementation of numerous assets: Active Directory, PdT, IAM, Logger, Back-Up, Risk Analysis, Flow Matrix, Firewalls, etc.",
+      "iconname": "server"
+    },
+    {
+      "title": "Cyber Note Block",
+      "location": "",
+      "date": "",
+      "link": "https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00",
+      "subtitle": "Notion",
+      "description": "Notes and documentation dedicated to cybersecurity, including basics of GRC, privilege escalation on Linux and Windows, Active Directory attack, and over 60 CTF challenge walkthroughs.",
+      "iconname": "phone"
+    },
+    {
+      "title": "GDPR Application",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "",
+      "description": "Creation of a privacy policy, data forms, and a privacy impact assessment for a fictional company analyzing CO2 emissions from individuals.",
+      "iconname": "rgpd"
+    },
+    {
+      "title": "OPCI - Encryption Software",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "Python AES/RSA - Azure - ElectronJS",
+      "description": "To allow the transfer of confidential files within a company, we developed an end-to-end encrypted file sharing software solution.",
+      "iconname": "opci"
+    },
+    {
+      "title": "Tree Commerce",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "React - TailwindCSS - MongoDB - Express",
+      "description": "“How can we develop a new perspective on ecology?”. That’s how we came up with this idea: making trees the stars of our site. Ally Trees and Fashion.",
+      "iconname": "treecommerce"
+    },
+    {
+      "title": "Medicinery",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "React Native - Django - MSSQL",
+      "description": "An application to make instructions and general information about medicines accessible.",
+      "iconname": "pills"
+    }
+  ]
+}

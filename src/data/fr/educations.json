@@ -1,0 +1,20 @@
+{
+  "educations": [
+    {
+      "title": "EFREI Paris",
+      "location": "",
+      "date": "2019 - 2024",
+      "subtitle": "Diplôme d'ingénieur du numérique",
+      "description": "Diplôme d’ingénieur du numérique spécialisé en cybersécurité des SI et gouvernance, Formation d’ingénieur en informatique, Cybersécurité SI, Gouvernance cyber, Administration des SI, mathématiques et communication, intégralement en anglais.",
+      "iconname": "efrei"
+    },
+    {
+      "title": "APU",
+      "location": "Kuala Lumpur",
+      "date": "2022",
+      "subtitle": "",
+      "description": "Semestre d’échange - Bachelor EFREI Business, Computing and Engineering.",
+      "iconname": "planet"
+    }
+  ]
+}

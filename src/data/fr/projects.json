@@ -1,0 +1,57 @@
+{
+  "projects": [
+    {
+      "title": "Architecture Sécurisé",
+      "location": "",
+      "date": "",
+      "subtitle": "",
+      "description": "Projets à 8 étudiants demandant la reconstruction totale d’un SI sur un ESXi. Mise en place de nombreux assets : Active Directory, PdT, IAM, Logger, Back-Up, Analyse de Risque, Matrice de Flux, Pare-feux... ",
+      "iconname": "server"
+    },
+    {
+      "title": "Bloc Note Cyber",
+      "location": "",
+      "date": "",
+      "link": "https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00",
+      "subtitle": "Notion",
+      "description": "Notes et documentation dédier à la cybersécurité, comprenant des bases de GRC, l’escalade des privilèges Linux et Windows, l’attaque d’Active Directory, et plus de 60 walkthrough de challenges CTF.",
+      "iconname": "phone"
+    },
+    {
+      "title": "Application du RGPD",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "",
+      "description": "Réalisation d’une politique de confidentialité, de formulaire de données et d’une analyse d’impact sur la vie privée pour une entreprise fictive d’analyse d’émission C02 des particuliers.",
+      "iconname": "rgpd"
+    },
+    {
+      "title": "OPCI - Logiciel de chiffrement",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "Python AES/RSA - Azure - ElectronJS",
+      "description": "Afin de permettre le transfert de fichiers confidentiels au sein d’une entreprise, nous avons développé une solution logicielle de partage chiffré de bout en bout.",
+      "iconname": "opci"
+    },
+    {
+      "title": "Tree Commerce",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "React - TailwindCSS - MongoDB - Express",
+      "description": "“Comment pouvons-nous développer une nouvelle perspective sur l'écologie ?”. C'est ainsi que nous avons eu cette idée : faire des arbres les stars de notre site. Ally Trees and Fashion.",
+      "iconname": "treecommerce"
+    },
+    {
+      "title": "Medicinery",
+      "location": "",
+      "date": "",
+      "link": "",
+      "subtitle": "React Native - Django - MSSQL",
+      "description": "Une application pour rendre accessibles les modes d'emploi et les informations générales sur les médicaments.",
+      "iconname": "pills"
+    }
+  ]
+}
