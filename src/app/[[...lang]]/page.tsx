@@ -89,13 +89,21 @@ export default function Home({ params }: { params: { lang: string[] } }) {
             <section className="w-screen flex flex-col justify-start items-center gap-5 py-20 bg-lightgray text-darkgray px-3 md:px-10 -mt-10">
                 <div className={"flex flex-wrap justify-center items-start w-full md:w-5/6"}>
                     <div className={"flex flex-col justify-center items-center lg:items-end w-full lg:w-1/2"}>
-                        <h2 className={"text-4xl font-semibold text-center pb-5 pt-10 w-full"}>Expériences</h2>
+                        <h2 className={"text-4xl font-semibold text-center pb-5 pt-10 w-full"}>
+                            {
+                                (lang == "fr")? "Expériences" : "Experiences"
+                            }
+                        </h2>
                         {
                             get_experience("experiences", "full", "darkgray")
                         }
                     </div>
                     <div className={"flex flex-col justify-center items-center lg:items-start w-full lg:w-1/2"}>
-                        <h2 className={"text-4xl font-semibold text-center pb-5 pt-10 w-full"}>Projets</h2>
+                        <h2 className={"text-4xl font-semibold text-center pb-5 pt-10 w-full"}>
+                            {
+                                (lang == "fr")? "Projets" : "Projects"
+                            }
+                        </h2>
                         {
                             get_experience("projects", "full", "darkgray")
                         }
@@ -106,7 +114,11 @@ export default function Home({ params }: { params: { lang: string[] } }) {
                 <div className={"flex flex-col justify-center items-center w-full md:w-5/6 border-t border-darkgray pt-14"}>
                     <div className={"flex flex-wrap justify-center items-start w-5/6 md:w-3/4"}>
                         <div className={"flex flex-col justify-start items-end w-full md:w-1/2"}>
-                            <h2 className={"text-4xl font-semibold text-center pb-5 w-full"}>Me contacter</h2>
+                            <h2 className={"text-4xl font-semibold text-center pb-5 w-full"}>
+                                {
+                                    (lang == "fr")? "Me contacter" : "Contact me"
+                                }
+                            </h2>
                             <div className={"flex flex-row justify-center items-center gap-1 md:mt-10 h-10 w-full"}>
                                 <a href={"mailto:zhou-efr@gmail.com"} target={"_blank"}><Image src={MailIcon} alt={"Send me an email"} className={"h-8 contact-icon hover:opacity-50 transition-all"} /></a>
                                 <a href={"https://www.linkedin.com/in/zhou-killian/"} target={"_blank"}><Image src={LinkedInIcon} alt={"Contact me on LinkedIn"} className={"h-10 contact-icon hover:opacity-50 transition-all"} /></a>
