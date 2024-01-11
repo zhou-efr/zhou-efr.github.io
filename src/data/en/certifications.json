@@ -1,17 +1,25 @@
 {
   "certifications": [
     {
-      "title": "PMJR",
+      "title": "ISO 27001",
       "location": "",
       "date": "Ongoing",
       "subtitle": "",
-      "description": "Practical Malware Junior Reasercher",
+      "description": "ISO 27001 Lead Implementer",
+      "iconname": "iso"
+    },
+    {
+      "title": "PJMR",
+      "location": "",
+      "date": "Ongoing",
+      "subtitle": "",
+      "description": "Practical Junior Malware Researcher",
       "iconname": "tcmsecurity"
     },
     {
       "title": "PMJT",
-      "location": "",
-      "date": "Ongoing",
+      "location": "Certified",
+      "date": "2024",
       "subtitle": "",
       "description": "Practical Mobile Junior Tester",
       "iconname": "tcmsecurity"

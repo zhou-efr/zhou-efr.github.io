@@ -18,6 +18,14 @@
       "iconname": "phone"
     },
     {
+      "title": "EDR Integration",
+      "location": "",
+      "date": "",
+      "subtitle": "",
+      "description": "Setting up Wazuh in a hybrid Debian/Windows environment for monitoring and threat detection. Implementation of customized alerts and comparison with Microsoft Intune.",
+      "iconname": "magnifying"
+    },
+    {
       "title": "GDPR Application",
       "location": "",
       "date": "",

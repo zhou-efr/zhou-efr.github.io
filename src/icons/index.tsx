@@ -14,10 +14,16 @@ import PillsIcon from "./pills";
 import RgpdIcon from "./rgpd";
 import ServerIcon from "./server";
 import TreecommerceIcon from "./treecommerce";
+import IsoIcon from "./iso";
+import MagnifyingIcon from "./magnifying";
 import {FC} from "react";
 
 export const get_icon = (name?: string):FC => {
     switch (name) {
+        case 'magnifying':
+            return MagnifyingIcon;
+        case 'iso':
+            return IsoIcon;
         case 'efrei':
             return EfreiIcon;
         case 'planet':
