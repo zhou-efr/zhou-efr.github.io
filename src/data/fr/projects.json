@@ -18,6 +18,14 @@
       "iconname": "phone"
     },
     {
+      "title": "Intégration d'EDR",
+      "location": "",
+      "date": "",
+      "subtitle": "",
+      "description": "Configuration de Wazuh dans un environnement hybride Debian/Windows pour la surveillance et la détection des menaces. Mise en place d'alertes personnalisées et comparaison avec Microsoft Intune.",
+      "iconname": "magnifying"
+    },
+    {
       "title": "Application du RGPD",
       "location": "",
       "date": "",
