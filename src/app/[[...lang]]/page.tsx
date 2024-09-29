@@ -135,7 +135,7 @@ export default function Home({ params }: { params: { lang: string[] } }) {
                                 <div className={"flex flex-col items-start"}>
                                     <h3 className={"text-2xl font-semibold w-full"}>Courriel</h3>
                                     <p>Killian Zhou</p>
-                                    <a className={"hover:text-verylightgray"} href={"mailto:zhou-efr@gmail.com"} target={"_blank"}>zhou-efr@gmail.com</a>
+                                    <a className={"hover:text-verylightgray"} href={"mailto:zhouefr@gmail.com"} target={"_blank"}>zhouefr@gmail.com</a>
                                 </div>
                             </div>
                         </div>
