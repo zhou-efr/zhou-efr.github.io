@@ -2,16 +2,24 @@
   "certifications": [
     {
       "title": "PMJR",
-      "location": "",
-      "date": "En cours",
+      "location": "Certified",
+      "date": "2024",
       "subtitle": "",
       "description": "Practical Malware Junior Reasercher",
       "iconname": "tcmsecurity"
     },
     {
+      "title": "Azure AI-900",
+      "location": "Certified",
+      "date": "2024",
+      "subtitle": "",
+      "description": "Azure AI Fundamentals",
+      "iconname": "planet"
+    },
+    {
       "title": "PMJT",
-      "location": "",
-      "date": "En cours",
+      "location": "Certified",
+      "date": "2024",
       "subtitle": "",
       "description": "Practical Mobile Junior Tester",
       "iconname": "tcmsecurity"
