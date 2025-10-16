@@ -1,6 +1,14 @@
 {
   "certifications": [
     {
+      "title": "SST",
+      "location": "",
+      "date": "2025",
+      "subtitle": "",
+      "description": "First aid at work",
+      "iconname": "firstaid"
+    },
+    {
       "title": "PMJR",
       "location": "Certified",
       "date": "2024",
@@ -23,6 +31,14 @@
       "subtitle": "",
       "description": "Practical Mobile Junior Tester",
       "iconname": "tcmsecurity"
+    },
+    {
+      "title": "TOEIC",
+      "location": "7.5/9",
+      "date": "2024",
+      "subtitle": "",
+      "description": "Professional english",
+      "iconname": "planet"
     },
     {
       "title": "OSCP",

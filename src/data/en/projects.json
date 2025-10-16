@@ -1,25 +1,33 @@
 {
   "projects": [
     {
-      "title": "Secure Architecture",
+      "title": "Homelab Infrastructure",
       "location": "",
-      "date": "",
-      "subtitle": "",
-      "description": "A project involving 8 students that required the total reconstruction of an IS on an ESXi. Implementation of numerous assets: Active Directory, PdT, IAM, Logger, Back-Up, Risk Analysis, Flow Matrix, Firewalls, etc.",
+      "date": "2025",
+      "subtitle": "Home Automation and Network Security",
+      "description": "A home lab setup using Proxmox for virtualization, Home Assistant for automation, pfSense and Fortigate, Fortiswitch, and WLED/ESP32 C3 for light control. Nginx/Node.js, with Docker/Portainer.",
       "iconname": "server"
     },
     {
       "title": "Cyber Note Block",
       "location": "",
-      "date": "",
+      "date": "2022 - Today",
       "link": "https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00",
       "subtitle": "Notion",
-      "description": "Notes and documentation dedicated to cybersecurity, including basics of GRC, privilege escalation on Linux and Windows, Active Directory attack, hardware security, and over 60 CTF challenge walkthroughs.",
+      "description": "Notes and documentation dedicated to cybersecurity, privilege escalation on Linux and Windows, Active Directory attack, hardware security, and over 60 CTF challenge walkthroughs.",
       "iconname": "phone"
     },
     {
-      "title": "EDR Integration",
+      "title": "Secure Architecture",
       "location": "",
+      "date": "2023",
+      "subtitle": "",
+      "description": "A project involving 8 students that required the total reconstruction of an IS on an ESXi. Implementation of numerous assets: Active Directory, PdT, IAM, Logger, Back-Up, Risk Analysis, Flow Matrix, Firewalls, etc.",
+      "iconname": "server"
+    },
+    {
+      "title": "EDR Integration",
+      "location": "2023",
       "date": "",
       "subtitle": "",
       "description": "Setting up Wazuh in a hybrid Debian/Windows environment for monitoring and threat detection. Implementation of customized alerts and comparison with Microsoft Intune.",
@@ -27,7 +35,7 @@
     },
     {
       "title": "GDPR Application",
-      "location": "",
+      "location": "2023",
       "date": "",
       "link": "",
       "subtitle": "",
@@ -36,7 +44,7 @@
     },
     {
       "title": "OPCI - Encryption Software",
-      "location": "",
+      "location": "2022",
       "date": "",
       "link": "",
       "subtitle": "Python AES/RSA - Azure - ElectronJS",
@@ -45,7 +53,7 @@
     },
     {
       "title": "Tree Commerce",
-      "location": "",
+      "location": "2022",
       "date": "",
       "link": "",
       "subtitle": "React - TailwindCSS - MongoDB - Express",
@@ -54,7 +62,7 @@
     },
     {
       "title": "Medicinery",
-      "location": "",
+      "location": "2020-2021",
       "date": "",
       "link": "",
       "subtitle": "React Native - Django - MSSQL",

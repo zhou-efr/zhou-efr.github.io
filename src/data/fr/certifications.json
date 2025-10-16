@@ -1,11 +1,19 @@
 {
   "certifications": [
     {
-      "title": "PMJR",
+      "title": "SST",
+      "location": "",
+      "date": "2024",
+      "subtitle": "",
+      "description": "Sauveteur Secouriste au Travail",
+      "iconname": "firstaid"
+    },
+    {
+      "title": "PMRP (ex-PMJR)",
       "location": "Certified",
       "date": "2024",
       "subtitle": "",
-      "description": "Practical Malware Junior Reasercher",
+      "description": "Practical Malware Research Professional",
       "iconname": "tcmsecurity"
     },
     {
@@ -17,11 +25,19 @@
       "iconname": "planet"
     },
     {
-      "title": "PMJT",
+      "title": "TOEIC",
+      "location": "7.5/9",
+      "date": "2024",
+      "subtitle": "",
+      "description": "Anglais professionnel (C1)",
+      "iconname": "planet"
+    },
+    {
+      "title": "PMPA (ex-PMJT)",
       "location": "Certified",
       "date": "2024",
       "subtitle": "",
-      "description": "Practical Mobile Junior Tester",
+      "description": "Practical Mobile Pentest Associate",
       "iconname": "tcmsecurity"
     },
     {

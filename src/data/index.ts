@@ -9,7 +9,6 @@ import certifications_en from "./en/certifications.json";
 import experiences_en from "./en/experiences.json";
 import projects_en from "./en/projects.json";
 import heading_en from "./en/heading.json";
-import { type } from "os";
 
 export type DataType = {
     title: string;

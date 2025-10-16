@@ -1,12 +1,14 @@
 {
     "heading": {
-        "age-location": "22 ans - Paris / Brest",
-        "title": "Ingénieur en Cybersecurité SI et Gouvernance",
-        "job": "Consultant en cybersécurité, Pentester freelance, Développeur full-stack et programmation embarquée",
+        "age-location": "24 ans - Paris / Brest",
+        "title": "Ingénieur Cybersecurité",
+        "job": "Consultant en cybersécurité, Développeur full-stack et programmation embarquée",
         "inShort": "Je suis Zhou Killian, consultant en cybersécurité chez CGI Business Consulting.",
         "descriptions": [
-            "Je suis Zhou Killian, consultant en cybersécurité chez CGI Business Consulting. Mon parcours débute il y a plus d'une décennie en tant que développeur autodidacte et se consolide par la suite grâce à mes études à l'EFREI Paris. Mon expérience en développement full stack dans une start-up dédiée à la cybersécurité et ma participation à un projet ambitieux de reconstruction d’une infrastructure Active Directory ont affiné mes compétences techniques et stratégiques dans ce domaine. ",
-            "Aujourd'hui, consultant en analyse de risques, j’intègre connaissances théoriques et compétences pratiques afin de naviguer dans le monde en constante mutation de la sécurité numérique. Par ailleurs, mon rôle antérieur en tant que président de l'association ICE et ma passion pour l’escrime ajoutent une dimension associative et sportive à mon profil. Je vous invite à explorer mon portfolio pour découvrir mes compétences, mes projets et mes perspectives dans le domaine de la cybersécurité et de la technologie."
+            "Je suis Zhou Killian, consultant en cybersécurité chez CGI Business Consulting, avec plus de 10 ans d'expérience, ayant débuté comme développeur autodidacte. Mon parcours s’est consolidé par des études à l’EFREI Paris, où j'ai acquis des compétences techniques et stratégiques en cybersécurité. Aujourd’hui, je me spécialise en analyse de risques et en tests d’intrusion, ayant réalisé plus de 40 analyses selon les méthodes EBIOS dans divers environnements IT, y compris l'intelligence artificielle générative. ",
+            "En parallèle, mes missions m'ont permis de travailler sur des sujets d'analyse d'applications non standards et sur l'organisation d'exercices de crise pour tester la réponse aux cyberattaques. Ma carrière m’a également conduit à un rôle de développeur Full-Stack chez Brain Security, où j’ai piloté la refonte d’une application de gamification pour la sensibilisation à la cybersécurité. J'aime ainsi intégrer connaissances organisationnelles et compétences pratiques afin de naviguer dans le monde en constante mutation de la sécurité numérique.",
+            "Enfin, d'un point de vu plus personnel, mon rôle antérieur en tant que président de l'association ICE et ma pratique régulière de la natation ajoutent une dimension associative et sportive à mon profil.",
+            "Je vous invite à explorer mon portfolio pour découvrir mes compétences, mes projets et mes perspectives dans le domaine de la cybersécurité et de la technologie."
         ]
     }
 }

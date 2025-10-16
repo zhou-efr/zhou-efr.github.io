@@ -16,6 +16,7 @@ import ServerIcon from "./server";
 import TreecommerceIcon from "./treecommerce";
 import IsoIcon from "./iso";
 import MagnifyingIcon from "./magnifying";
+import FirstAidIcon from "./firstaid"
 import {FC} from "react";
 
 export const get_icon = (name?: string):FC => {
@@ -56,6 +57,8 @@ export const get_icon = (name?: string):FC => {
             return ServerIcon;
         case 'treecommerce':
             return TreecommerceIcon;
+        case 'firstaid':
+            return  FirstAidIcon;
         default:
             return (() => <></>) as FC;
     }

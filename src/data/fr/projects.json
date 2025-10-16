@@ -1,16 +1,16 @@
 {
   "projects": [
     {
-      "title": "Architecture Sécurisé",
+      "title": "Infrastructure Homelab",
       "location": "",
-      "date": "",
-      "subtitle": "",
-      "description": "Projets à 8 étudiants demandant la reconstruction totale d’un SI sur un ESXi. Mise en place de nombreux assets : Active Directory, PdT, IAM, Logger, Back-Up, Analyse de Risque, Matrice de Flux, Pare-feux... ",
+      "date": "2025",
+      "subtitle": "Domotique et sécurité réseau",
+      "description": "Une configuration homelab utilisant Proxmox pour la virtualisation, Home Assistant pour l'automatisation, pfSense et Fortigate, Fortiswitch, et WLED/ESP32 C3 pour le controle des lumières. Nginx/Node.js, avec Docker/Portainer.",
       "iconname": "server"
     },
     {
       "title": "Bloc Note Cyber",
-      "location": "",
+      "location": "2022 - Aujoud'hui",
       "date": "",
       "link": "https://zhou-efr.notion.site/Cybers-curit-b5e0009d00ed4d7b842a009cbcb98c00",
       "subtitle": "Notion",
@@ -18,8 +18,16 @@
       "iconname": "phone"
     },
     {
+      "title": "Architecture Sécurisé",
+      "location": "2023",
+      "date": "",
+      "subtitle": "",
+      "description": "Projets à 8 étudiants demandant la reconstruction totale d’un SI sur un ESXi. Mise en place de nombreux assets : Active Directory, PdT, IAM, Logger, Back-Up, Analyse de Risque, Matrice de Flux, Pare-feux... ",
+      "iconname": "server"
+    },
+    {
       "title": "Intégration d'EDR",
-      "location": "",
+      "location": "2023",
       "date": "",
       "subtitle": "",
       "description": "Configuration de Wazuh dans un environnement hybride Debian/Windows pour la surveillance et la détection des menaces. Mise en place d'alertes personnalisées et comparaison avec Microsoft Intune.",
@@ -27,7 +35,7 @@
     },
     {
       "title": "Application du RGPD",
-      "location": "",
+      "location": "2023",
       "date": "",
       "link": "",
       "subtitle": "",
@@ -36,7 +44,7 @@
     },
     {
       "title": "OPCI - Logiciel de chiffrement",
-      "location": "",
+      "location": "2022",
       "date": "",
       "link": "",
       "subtitle": "Python AES/RSA - Azure - ElectronJS",
@@ -45,7 +53,7 @@
     },
     {
       "title": "Tree Commerce",
-      "location": "",
+      "location": "2022",
       "date": "",
       "link": "",
       "subtitle": "React - TailwindCSS - MongoDB - Express",
@@ -54,7 +62,7 @@
     },
     {
       "title": "Medicinery",
-      "location": "",
+      "location": "2020-2021",
       "date": "",
       "link": "",
       "subtitle": "React Native - Django - MSSQL",

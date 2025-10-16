@@ -5,6 +5,7 @@ import MailIcon from "@/icons/mail.svg";
 import LinkedInIcon from "@/icons/linkedin.svg";
 import GithubIcon from "@/icons/github.svg";
 import BannerImage from "@/images/banner4.png";
+import CVIcon from "@/icons/dopc.svg"
 import Flag_fr from "@/images/France.png";
 import Flag_uk from "@/images/United-Kingdoms.png";
 import Image from "next/image";
@@ -123,6 +124,7 @@ export default function Home({ params }: { params: { lang: string[] } }) {
                                 <a href={"mailto:zhou-efr@gmail.com"} target={"_blank"}><Image src={MailIcon} alt={"Send me an email"} className={"h-8 contact-icon hover:opacity-50 transition-all"} /></a>
                                 <a href={"https://www.linkedin.com/in/zhou-killian/"} target={"_blank"}><Image src={LinkedInIcon} alt={"Contact me on LinkedIn"} className={"h-10 contact-icon hover:opacity-50 transition-all"} /></a>
                                 <a href={"https://github.com/zhou-efr"} target={"_blank"}><Image src={GithubIcon} alt={"Follow me on GitHub"} className={"h-10 contact-icon hover:opacity-50 transition-all"} /></a>
+                                <a href={(lang == "fr")?"/CV-killian-zhou.pdf":"/Resume-killian-zhou.pdf"} target={"_blank"}><Image src={CVIcon} alt={"Download my Resume"} className={"h-10 contact-icon hover:opacity-50 transition-all"} /></a>
                             </div>
                         </div>
                         <div className={"flex flex-col justify-start items-center w-full md:w-1/2 mt-5 md:mt-2"}>
